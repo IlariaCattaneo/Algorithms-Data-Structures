@@ -1,0 +1,638 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Python Programming - Examples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../font.css" rel="stylesheet" type="text/css">
+<link href="../../anto.css" rel="stylesheet" type="text/css">
+</head>
+<body><div class="normaltext">
+
+<h1>Python - Examples</h1>
+
+<p>This page contains some examples and problems for a basic
+programming course in Python.
+
+<ul class="lectures">
+<li class="lecture"><b>ciao!</b>  how could we possibly talk about
+  programming without the ubuquitous "Hello world!" program?
+
+<div class="paperlinks"><a href="ciao.py">ciao.py</a></div>
+
+<li class="lecture">
+    <b>minmax:</b><br> Write a program that reads a sequence of numbers
+    from the standard input, with one or more numbers per line, and
+    prints the minimum and the maximum values in the list.  For
+    example, with this input:
+<pre>10
+15
+7
+9
+1
+3
+</pre>
+    The output must be as follows:
+<pre>min=1
+max=15
+</pre>
+
+<div class="paperlinks"><a href="minmax.py">minmax.py</a></div>
+
+<li class="lecture">
+    <b>histogram</b><br> Write a program that reads a list of
+    non-negative numbers from the standard input, with one number per
+    line, and prints a histogram corresponding to those numbers.  In
+    this histogram, each number N is represented by a line of N
+    characters "#".  For example, with this input:
+<pre>10
+15
+7
+9
+1
+3
+</pre>
+    The output must be as follows:
+<pre>##########
+###############
+#######
+#########
+#
+###
+</pre>
+
+<div class="paperlinks"><a href="histogram.py">histogram.py</a></div>
+
+<li class="lecture">
+    <b>vertical histogram</b><br> Write a program that reads a list of
+    numbers from the standard input, with one or more numbers per
+    line, and prints a vertical histogram corresponding to those
+    numbers.  In this histogram, each number N is represented by a
+    column of N characters "#" starting from a base-line of N dash
+    characters "-" representing value 0.  Positive numbers are
+    represented by a column above zero while negative numbers are
+    represented with a column below zero.
+
+    For example, with this input:
+<pre>7 3 -2 10 5 -3 3 5 8 
+</pre>
+    The output must be as follows:
+<pre>   #     
+   #     
+   #    #
+#  #    #
+#  #    #
+#  ##  ##
+#  ##  ##
+## ## ###
+## ## ###
+## ## ###
+---------
+  #  #   
+  #  #   
+     #   
+</pre>
+
+<div class="paperlinks"><a href="vertical_histogram.py">vertical_histogram.py</a></div>
+
+<li class="lecture"><b>commonword</b><br> 
+  Write a program that reads a text file from the standard input and
+  outputs the most common word in the input.  The <em>words</em> in
+  the input are the maximal-length sequences of alphabetic characters
+  (e.g., a-z). So, a word does not include spaces or punctuation
+  characters.  If two or more words appear more often, the program may
+  print any one of them.
+
+  <p>For example, if the input is this:
+<pre>  What is free software?
+
+  "Free software" is a matter of liberty, not price. To understand the
+  concept, you should think of "free" as in "free speech", not as in
+  "free beer".
+
+  Free software is a matter of the users' freedom to run, copy,
+  distribute, study, change and improve the software.
+</pre>
+then the output should be this:
+<pre>  free
+</pre>
+    <div class="paperlinks"><a href="commonword.py">commonword.py</a></div>
+
+<li class="lecture">
+  <b>character frequencies</b><br> Write a program that reads a text
+  file from the standard input, and prints the list of all characters
+  present in the input followed by the number of times the character
+  appears in the input.
+
+  <div class="paperlinks"><a href="character_freq2.py">character_freq.py</a></div>
+
+<li class="lecture">
+    <b>character frequencies 2</b><br> Write a variant of the
+    "character frequencies" program described above that outputs all
+    the characters in reverse order of frequency (i.e., from the
+    highest to the lowest frequency count).
+
+    <div class="paperlinks"><a href="character_freq2.py">character_freq2.py</a></div>
+
+<li class="lecture">
+    <b>word frequencies</b><br> Write a program that reads a text file
+    from the standard input and prints the list of all the words in
+    the text file, each followed by the number of times the word
+    occurs in the text.  Words in the input are the maximal-length
+    sequences of alphabetic characters (e.g., a-z).  So, a word does
+    not include spaces or punctuation characters.
+
+    <div class="paperlinks"><a href="word_freqs.py">word_freqs.py</a></div>
+
+<li class="lecture">
+    <b>shortest least common word</b><br> Write a program that reads a
+    list of words from the standard input, with one word per line, and
+    prints any one of the shortest words among those that appear least
+    often.
+
+    <div class="paperlinks"><a href="shortest_least_frequent_word.py">shortest_least_frequent_word.py</a></div>
+
+<li class="lecture">
+    <b>largest cluster</b><br> Write a program that reads a list of
+    numbers from the standard input, with one or more numbers per line
+    separated by spaces on each line, and prints the largest cluster
+    of extension D.  The parameter D is a number that may be given as
+    the first command-line argument.  If the parameter is not
+    specified, the default value is D=10.  A cluster of extension D is
+    a list of all the elements taken from the input list that are
+    within a distance of at most D from each other.  For example, if
+    the input sequence is 12, 2, 34, 7, 21, 24, 50, 45, -9, 7, 45, and
+    if D=10, then the output should contain the numbers 12, 2, 7, 7
+    because those numbers form a cluster of extension 10, and no other
+    cluster of extension 10 contains more than 4 elements.
+ 
+    <div class="paperlinks"><a href="largest_cluster.py">largest_cluster.py</a></div>
+
+<li class="lecture">
+    <b>count inversions</b><br> Write a program that reads a sequence
+    of numbers from the standard input, with one or more numbers per
+    line separated by spaces on each line, and prints the number
+    of <em>inversions</em> in the sequence.  In a sequence <em>A =
+    [a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>]</em>, an
+    inversion is a pair <em>a<sub>i</sub>, a<sub>j</sub></em> such
+    that <em>i</em>&lt;<em>j</em>
+    and <em>a<sub>i</sub></em>&gt;<em>a<sub>j</sub></em>.
+ 
+    <div class="paperlinks"><a href="count_inversions.py">count_inversions.py</a></div>
+
+<li class="lecture">
+    <b>roman numeral</b><br> Write a program that takes a number N
+    (a positive integer) in decimal notation from the console, and
+    prints its value as a roman numeral.
+
+    <div class="paperlinks"><a href="roman_numeral.py">roman_numeral.py</a></div>
+
+<div class="paperlinks"><a href="numero_romano.py">numero_romano.py</a></div>
+
+<li class="lecture">
+    <b>prime factors</b><br> Write a program that reads a number N (a
+    positive integer) from the console or from the command line, and
+    outputs its prime factorization.  For example, for N=2312, the
+    program should output "2^3 17^2", and for N=10242311 the output
+    should be "19 701 769".
+
+<div class="paperlinks"><a href="prime_factors.py">prime_factors.py</a></div>
+
+<li class="lecture">
+    <b>check sudoku</b><br> Write a program that reads nine lines from
+    the input each containing nine numbers between 1 and 9,
+    representing a sudoku puzzle.   The program should output
+    "Correct" if the input represents a valid sudoku.  For example,
+    with this input:
+<pre>1 2 3 4 5 6 7 8 9
+4 5 6 7 8 9 1 2 3 
+7 8 9 1 2 3 4 5 6
+2 3 4 5 6 7 8 9 1
+5 6 7 8 9 1 2 3 4
+8 9 1 2 3 4 5 6 7
+3 4 5 6 7 8 9 1 2
+6 7 8 9 1 2 3 4 5
+9 1 2 3 4 5 6 7 8
+</pre>
+the output should be "Correct".  While with this input:
+<pre>1 2 3 4 5 6 7 8 9 
+4 5 6 7 8 9 1 2 3 
+7 8 9 1 2 3 4 5 6
+2 3 4 5 9 5 8 7 1
+9 6 7 8 6 1 2 3 4
+8 9 1 2 3 4 5 6 7
+3 4 5 6 7 8 9 1 2
+6 7 8 9 1 2 3 4 5
+5 1 2 3 4 7 6 9 8
+</pre>
+
+the output should be "Incorrect", and the program should also indicate
+at least one row, or column, or 3x3 sub-matrix that violates the rules
+of sudoku.
+
+<div class="paperlinks"><a href="check_sudoku.py">check_sudoku.py</a></div>
+
+<li class="lecture">
+    <b>maze</b><br> Write a program that prints a maze generated
+    at random like this one:
+<pre>/\//\////\\\\/\\\\/\\\\//\//////\/\//\//\/\\/\/\\\////\\//\\
+/\\/\/\\\\\\\//\\//\\\/////\//\////\///\///\////\//\\///\/\/
+/\//\\///\//\//\/\\\\\\\\\////\/\\/\\\//\\/////\\\/\\\\\\///
+\\\\/\\/////\\//\//\\\//\//\//\\\//\\\\///\/\/\/\///\\\/\/\/
+\\////\\\\\\/////\\\\\/\/\//\\\//\/\\//\/\\/\/\\\////\\\/\/\
+/\//\//\/\//////\\/\/////////\\/\/////////\\\\/\/\\//\/\\///
+/\\\\\//\\/\/\///\/\///\/\////\\//\\\\/\///\\\////\\\\\\//\\
+//\//\\///\////\/\//\////\\/\/\\\\\////\///\///\////\\//\///
+///\\/\//\\/\\/\/\\\\\///\//\\/\///\/\\\\\//\///\/\\////\/\/
+\//\//\\\/\///////\///\\\\////\///\\//\/\\\\//\\/\//\/\\\/\/
+/\\/////\//\/\\/\\\//\\/\///\\///\\\//////\\/\//\\\/\\\\\/\\
+\\/\\\\///\////\\\\\\\\\\/\\\//\//\\\\\/\/\\\///\\\\/\////\/
+/\\//\\////\/\///\//\///\///\////\/\//\/\\///\\/////\/\//\\\
+\//\\\//\/\\\////\////\///\////\//\/\//\/\\//\\/\\\//\/\/\\\
+\/\/\//\\/\/\/\\/\\/\/\////\\/\\/\//////\///\///\//\/\///\\\
+//\\//\\\\\\\///\//\\/\/\\\\\/\/\//\/\\\\\/\/\\//\\////\\\\/
+//\//\/\//\\/\//\/\///\//\/\\\\/\/\/\\\\\///\\\\/////\////\/
+/\\////\//\/\///\\/\/\/\\///\\\\\\//\\/\/\\\\\//\//\//\\//\\
+\//\///////\/\\//\/\\\/\/\\\\///\\\\/\///\\/\/\///\\/\\///\/
+//\///////\\\/\/\//\//\//\\/\//////\/\//\\/\\////\\//\\\\\/\
+</pre>
+
+Also, write a program that, given an input maze like the one above
+(read from the standard input) finds and prints a complete path that
+enters from the top and exists from the bottom of the maze.  For
+example, one solution for the maze above is is this one:
+<pre>              \\                                            
+              /\\                                           
+           /\//\/                                           
+          //\\//                                            
+          \\///                                             
+        /\////                                              
+        \\/\/                                               
+        //                                                  
+       //                                                   
+       \\/\                                                 
+        \//                                                 
+        //                                                  
+       //                                                   
+      //                                                    
+     //                                                     
+    //                                                      
+ /\//                                                       
+ \\/                                                        
+ //                                                         
+//                                                          
+</pre>
+    <div class="paperlinks"><a href="random_maze.py">random_maze.py</a>, <a href="maze_solver.py">maze_solver.py</a></div>
+
+<li class="lecture">
+    <b>partition</b><br> Write a program that prints all the
+    partitions of a given integer.  A partition of <emph>n</emph> is a
+    bag of integers <emph>a<sub>1</sub>, a<sub>2</sub>, ...</emph>,
+    such that <emph>a<sub>1</sub> + a<sub>2</sub> + ... = n</emph>.
+    (A "bag" is like a set, in the sense that the order doesn't
+    matter, but it is also like a sequence in the sense that it may
+    contain repeated elements.) For example, the result
+    for <emph>n=7</emph> is:
+<pre>7 
+6 1 
+5 2 
+5 1 1 
+4 3 
+4 2 1 
+4 1 1 1 
+3 3 1 
+3 2 2 
+3 2 1 1 
+3 1 1 1 1 
+2 2 2 1 
+2 2 1 1 1 
+2 1 1 1 1 1 
+1 1 1 1 1 1 1 
+</pre>
+    <div class="paperlinks"><a href="partition_simple.py">partition_simple.py</a>, <a href="partition.py">partition.py</a></div>
+
+<li class="lecture">
+    <b>fifteen</b><br> Write a program to play the game "fifteen".
+    The game shows a 4-by-4 table containing 15 numbers (or letters),
+    plus an empty cell.  The objective of the game is to arrange the
+    numbers in order.  A move amounts to moving a cell into the
+    adjacent empty cell.  Or, in other words, a move exchanges the
+    empty cell with an adjacent one.  For example, starting from this
+    initial state:
+<pre>+--+--+--+--+
+|11| 3|12|15|
++--+--+--+--+
+| 7| 4| 6|  |
++--+--+--+--+
+| 8| 2|10|14|
++--+--+--+--+
+| 9| 5| 1|13|
++--+--+--+--+
+</pre>
+    The player may move number 6 into the empty cell, obtaining this
+    configuration:
+<pre>+--+--+--+--+
+|11| 3|12|15|
++--+--+--+--+
+| 7| 4|  | 6|
++--+--+--+--+
+| 8| 2|10|14|
++--+--+--+--+
+| 9| 5| 1|13|
++--+--+--+--+
+</pre>
+    <div class="paperlinks"><a href="fifteen.py">fifteen.py</a></div>
+
+<li class="lecture">
+    <b>tree</b><br> Write a un programma that reads a <em>tree</em>
+ and prints it.  The program reads trees in two different formats:
+
+<ol>
+<li>a text file in which each line contains two
+strings: <emph>node</emph> <emph>parent-node</emph>.  
+For example:
+<pre>ciao root
+miao root
+mamma ciao
+gatto miao
+cane gatto
+topo gatto
+bimbo mamma
+bambina mamma
+bambini mamma
+</pre>
+
+<li>a text file in which each line contains a sequence of strings
+  separated by the character "/".  For example:
+
+<pre>/usr/share/texmf-texlive
+/usr/share/texmf-texlive/dvips
+/usr/share/texmf-texlive/dvips/pst-text
+/usr/share/texmf-texlive/dvips/hfbright
+/usr/share/texmf-texlive/dvips/tetex
+/usr/share/texmf-texlive/metapost
+/usr/share/texmf-texlive/metapost/venn
+/usr/share/texmf-texlive/metapost/makecirc
+/usr/share/texmf-texlive/metapost/frcursive
+/usr/share/texmf-texlive/metapost/nkarta
+/usr/share/texmf-texlive/fonts
+/usr/share/texmf-texlive/fonts/map
+/usr/share/texmf-texlive/fonts/map/dvips
+/usr/share/texmf-texlive/fonts/map/dvips/eurosym
+/usr/share/texmf-texlive/fonts/map/dvips/hfbright
+/usr/share/texmf-texlive/fonts/map/dvips/updmap
+/usr/share/texmf-texlive/fonts/map/dvips/tetex
+/usr/share/texmf-texlive/fonts/map/dvips/iwona
+/usr/share/texmf-texlive/fonts/map/dvips/phaistos
+/usr/share/texmf-texlive/fonts/ofm
+/usr/share/texmf-texlive/fonts/ofm/public
+/usr/share/texmf-texlive/fonts/ofm/public/oinuit
+/usr/share/texmf-texlive/fonts/ofm/public/ocherokee
+/usr/share/texmf-texlive/fonts/ofm/public/cm-lgc
+/usr/share/texmf-texlive/fonts/tfm
+/usr/share/texmf-texlive/fonts/tfm/cg
+/usr/share/texmf-texlive/fonts/tfm/cg/albertus
+/usr/share/texmf-texlive/fonts/tfm/cg/courier
+/usr/share/texmf-texlive/fonts/tfm/cg/lettrgth
+/usr/share/texmf-texlive/fonts/tfm/cg/coronet
+/usr/share/texmf-texlive/fonts/tfm/cg/atqolive
+/usr/share/texmf-texlive/fonts/tfm/cg/times
+/usr/share/texmf-texlive/fonts/opentype
+/usr/share/texmf-texlive/fonts/opentype/public
+/usr/share/texmf-texlive/fonts/opentype/public/iwona
+/usr/share/texmf-texlive/fonts/opentype/public/antt
+/usr/share/texmf-texlive/fonts/truetype
+/usr/share/texmf-texlive/fonts/truetype/public
+/usr/share/texmf-texlive/fonts/truetype/public/belleek
+/usr/share/texmf-texlive/fonts/enc
+/usr/share/texmf-texlive/fonts/enc/dvips
+/usr/share/texmf-texlive/fonts/enc/dvips/hfbright
+/usr/share/texmf-texlive/bibtex
+/usr/share/texmf-texlive/bibtex/bst
+/usr/share/texmf-texlive/bibtex/bst/directory
+/usr/share/texmf-texlive/bibtex/bst/adrconv
+/usr/share/texmf-texlive/bibtex/bst/hc
+/usr/share/texmf-texlive/xdvi
+/usr/share/texmf-texlive/xdvi/pixmaps
+/usr/share/texmf-texlive/omega
+/usr/share/texmf-texlive/omega/ocp
+/usr/share/texmf-texlive/omega/ocp/oinuit
+/usr/share/texmf-texlive/omega/ocp/misc
+/usr/share/texmf-texlive/omega/ocp/ocherokee
+/usr/share/texmf-texlive/omega/otp
+/usr/share/texmf-texlive/omega/otp/misc
+/usr/share/texmf-texlive/omega/otp/ocherokee
+/usr/share/texmf-texlive/source
+</pre>
+</ol>
+
+The program must print the resulting tree in one of three formats
+selected through a command-line argument.  If no command-line argument
+is given, then the program should print the output in all three output
+format. The formats are defined as follows:
+
+<dl>
+<di>indentation<dd>represents a tree by indenting each element under
+    its parent element.  For example, in the case of the first
+    example, the risult should be:
+<pre>root
+  ciao
+    mamma
+      bimbo
+      bambina
+      bambini
+  miao
+    gatto
+      cane
+      topo
+</pre>
+
+<di>simple<dd>represents a tree with the textual connectors "+" "-"
+    and "|" in a simple way.  For example, the output for the first
+    example tree should be this:
+<pre>+-root
+ +-ciao
+ | +-mamma
+ |   +-bimbo
+ |   +-bambina
+ |   +-bambini
+ +-miao
+   +-gatto
+     +-cane
+     +-topo
+</pre>
+
+<di>pretty<dd>represents the tree with textual connectors in a richer
+    and more expressive format.  For example, the second example
+    should produce this output:
+<pre>•┬share
+ └┬texmf-texlive
+  ├┬metapost
+  │├─venn
+  │├─makecirc
+  │├─nkarta
+  │└─frcursive
+  ├┬fonts
+  │├┬ofm
+  ││└┬public
+  ││ ├─oinuit
+  ││ ├─ocherokee
+  ││ └─cm-lgc
+  │├┬enc
+  ││└┬dvips
+  ││ └─hfbright
+  │├┬tfm
+  ││└┬cg
+  ││ ├─courier
+  ││ ├─lettrgth
+  ││ ├─atqolive
+  ││ ├─coronet
+  ││ ├─albertus
+  ││ └─times
+  │├┬map
+  ││└┬dvips
+  ││ ├─hfbright
+  ││ ├─updmap
+  ││ ├─eurosym
+  ││ ├─tetex
+  ││ ├─iwona
+  ││ └─phaistos
+  │├┬opentype
+  ││└┬public
+  ││ ├─iwona
+  ││ └─antt
+  │└┬truetype
+  │ └┬public
+  │  └─belleek
+  ├┬bibtex
+  │└┬bst
+  │ ├─directory
+  │ ├─adrconv
+  │ └─hc
+  ├─source
+  ├┬dvips
+  │├─pst-text
+  │├─hfbright
+  │└─tetex
+  ├┬xdvi
+  │└─pixmaps
+  └┬omega
+   ├┬ocp
+   │├─oinuit
+   │├─misc
+   │└─ocherokee
+   └┬otp
+    ├─misc
+    └─ocherokee
+</pre>
+</dl>
+    <div class="paperlinks"><a href="tree.py">tree.py</a></div>
+
+<li id="maxlines" class="lecture"><b>maxlines</b><br> 
+  Write a program that reads a text file from standard input and
+  outputs all the lines in the input that have maximal length.  For
+  example, if the input is
+<pre>    italy
+    switzerland
+    germany
+    sweden
+    austria
+    netherlands
+    belgium
+    france
+</pre>
+  then the output should be
+<pre>    switzerland
+    netherlands
+</pre>
+    <div class="paperlinks"><a href="maxlines.py">maxlines.py</a></div>
+
+<li class="lecture"><b>program-x</b><br>
+  Consider <a href="find_square_slow.py">this python program</a>.
+  Write another python program that does the same thing, but with a
+  better complexity.  Test your program with the following input files
+  (passed through standard input).
+
+  <ul>
+    <li><a href="points_10">points_10</a>
+    <li><a href="points_100">points_100</a>
+    <li><a href="points_1000">points_1000</a>
+    <li><a href="points_10000">points_10000</a>
+    <li><a href="points_20">points_20</a>
+    <li><a href="points_200">points_200</a>
+    <li><a href="points_2000">points_2000</a>
+    <li><a href="points_50">points_50</a>
+    <li><a href="points_500">points_500</a>
+    <li><a href="points_5000">points_5000</a>
+  </ul>
+
+    <div class="paperlinks"><a href="find_a_square.py">find_a_square.py</a>,
+    <a href="find_a_square2.py">find_a_square2.py</a></div>
+
+<li class="lecture"><b>tst</b><br> 
+  Write a program that reads a list of words from the standard input,
+  constructs a ternary search trie (TST) by inserting each word in the
+  TST in the given order, and then prints the TST on the standard
+  output, which is a textual output stream.
+
+  <p>The output of your program must conform exactly to a specific
+  format defined as follows. This format can be best described through
+  a series of examples. 
+
+  <ul>
+    <li><a href="words1.txt">input&nbsp;1</a> should produce <a href="tst1.txt">output&nbsp;1</a> 
+    <li><a href="words2.txt">input&nbsp;2</a> should produce <a href="tst2.txt">output&nbsp;2</a> 
+    <li><a href="words3.txt">input&nbsp;3</a> should produce <a href="tst3.txt">output&nbsp;3</a> 
+  </ul>
+
+    <div class="paperlinks"><a href="tst.py">tst.py</a></div>
+
+<li class="lecture"><b>plusminus</b><br> 
+  Write a program that reads a string of digits <em>S</em> as a
+  command-line argument, and inserts plus (+) and minus signs (-) in
+  the sequence of digits so as to create an expression that evaluates
+  to zero.  The program should output a resulting expression, if one
+  such expression exists, or "None" if no such expressions exist.
+
+  <p>For example, if <em>S</em> is "201015900001", then the program
+     could output "+2+0+10+1-5-9+0+0+0+0+1". Instead, if <em>S</em> is
+     "200015800001", then the program should output "None".
+
+  <p><b>Optimization:</b><br> Write a variant of this program that
+    produces expressions with the least number of plus or minus signs.
+    For example, an input value <em>S</em> "2391222918889" could
+    produce an output expression "+2+3+9+1+2-2-29-1+8+8+8-9".
+    However, a better expression would be "+239-122-29+1-88+8-9",
+    since the first one has 12 elements while the second one has only
+    7, and the minimum size is 6 (e.g., "+239-12-229+1-88+89").
+
+     <p>As another example,
+     consider <em>S</em>="3821248612902302283289922".  There exists an
+     expression of only 7 elements, which is minimal:
+     "+3821-24-8612-9023+022832-8992-2"
+
+     <p>Use your program to find the <em>minimal</em> expressions for
+       <ul>
+	 <li><em>S</em>="7492657830552204845644393"  
+	 <li><em>S</em>="92374381610287463001735516"
+	 <li><em>S</em>="382104861250230228328992253"
+	 <li><em>S</em>="4692836501182824552131283782"
+	 <li><em>S</em>="46928365011828245521312837821"
+       </ul>
+
+    <div class="paperlinks"><a href="plusminus.py">plusminus.py</a>, <a href="minusplus.py">minusplus.py</a></div>
+
+<li class="lecture"><b>undocumented examples</b><br> 
+The following are example programs provided without commentary.  (Most of them
+should be self-explanatory, at least to an Italian speaker.)
+
+<div class="paperlinks"><a href="maggiorenne.py">maggiorenne.py</a>, <a href="massimo.py">massimo.py</a>, <a href="mastermind.py">mastermind.py</a>, <a href="neve.py">neve.py</a>, <a href="nome.py">nome.py</a>, <a href="numero_a_parole.py">numero_a_parole.py</a></div>
+
+</ul>
+<p>
+</div><div class="headline docinfo">
+this page is maintained by <a href="../../index.html">Antonio Carzaniga</a>
+and was updated on March 25, 2018
+</div>
+</body>
+</html>

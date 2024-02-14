@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-25 Sun 22:13 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elementary Algorithmic Programming in Python</title>
+<meta name="author" content="Antonio Carzaniga" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+ body { font-family: "Noto Sans", Helvetica, sans-serif;
+	font-size: medium;
+	padding: 2em;
+	margin: auto;
+	max-width: 50em; }
+ .title  { text-align: left;
+	   padding-bottom: 0.5ex;
+	   margin-bottom: 2ex;
+	   border-bottom: 2pt solid #000000; }
+.subtitle { text-align: right; font-size: medium; font-weight: bold; margin-top:0; }
+.todo   { font-family: "Hack", monospace; color: red; }
+.done   { font-family: "Hack", monospace; color: green; }
+.priority { font-family: "Hack", monospace; color: orange; }
+.tag    { background-color: #eeeeee; font-family: "Hack", monospace;
+	  padding: 2px; font-size: 80%; font-weight: normal; }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+.org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+.org-center { margin-left: auto; margin-right: auto; text-align: center; }
+.underline { text-decoration: underline; }
+h2 { border-top: 1pt solid #000000;
+     margin-top: 3ex; }
+#postamble p, #preamble p { font-size: 90%; margin: .2em; }
+p.verse { margin-left: 3%; }
+pre {
+    border: 1px solid #cccccc;
+    box-shadow: 3px 3px 3px #eeeeee;
+    padding: 8pt;
+    font-family: "Hack", monospace;
+    overflow: auto;
+    margin: 0;
+    background-color: #e8e8e8;
+}
+pre.src {
+    position: relative;
+    overflow: auto;
+}
+pre.example {
+    position: relative;
+    overflow: auto;
+    border-style: solid;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 6pt;
+    border-color: #c8c8c8;
+}
+code { 
+    font-family: "Hack", monospace;
+    padding-top: 1pt;
+    padding-bottom: 1pt;
+    padding-left: 2pt;
+    padding-right: 2pt;
+    background-color: #e8e8e8;
+}
+a:link {
+    color: #603000;
+    text-decoration: none;
+    font-weight: bold; 
+}
+a:visited {
+    color: #603010;
+    text-decoration: none;
+    font-weight: bold; 
+}
+table { margin: auto; border-collapse:collapse; }
+thead { background-color: #f0f0f0; font-weight: bold; }
+caption.t-above { caption-side: top; }
+caption.t-bottom { caption-side: bottom; }
+td, th { vertical-align:top; }
+th.org-right  { text-align: center;  }
+th.org-left   { text-align: center;   }
+th.org-center { text-align: center; }
+td.org-right  { text-align: right;  }
+td.org-left   { text-align: left;   }
+td.org-center { text-align: center; }
+dt { font-weight: bold; }
+.footpara { display: inline; }
+.footdef  { margin-bottom: 1em; }
+.figure { padding: 1em; }
+.figure p { text-align: center; }
+.equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+}
+.equation {
+    vertical-align: middle;
+}
+.equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+.inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+}
+#org-div-home-and-up { text-align: right; font-size: 70%; white-space: nowrap; }
+textarea { overflow-x: auto; }
+.linenr { font-size: smaller }
+.code-highlighted { background-color: #ffff00; }
+.org-info-js_info-navigation { border-style: none; }
+#org-info-js_console-label { font-size: 10px; font-weight: bold; white-space: nowrap; }
+.org-info-js_search-highlight { background-color: #ffff00; color: #000000; font-weight: bold; }
+.org-svg { width: 90%; }
+.face-builtin { color: #338033; }
+.face-comment { color: #5C7A99; }
+.face-comment-delimiter { color: #5C7A99; }
+.face-constant { color: #333380; }
+.face-doc { color: #80335A; }
+.face-function-name { color: #3D3380; font-weight: bold; }
+.face-keyword { color: #000000; font-weight: bold; }
+.face-preprocessor { color: #338033; }
+.face-string { color: #648033; font-style: italic; }
+.face-type { color: #803333; }
+.face-variable-name { color: #335980; }
+  /*]]>*/-->
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Elementary Algorithmic Programming in Python</h1>
+<p>
+Programming means telling a computer how to do something.  It is not
+fundamentally different from telling a <i>person</i> how to do the same
+thing.  In essence, you write step-by-step instructions.  Think about
+the way you would write a recipe, or directions to go to some place.
+Those are effectively &ldquo;programs&rdquo;.  With a person, you might write
+those programs in English (or whatever natural language that person
+understands).  Here we deal with computer programs, and for our
+purposes we use a language called <a href="https://www.python.org/">Python</a>.
+</p>
+
+<p>
+Our goal, however, is not to learn much about Python, but rather to
+learn enough of Python to be able to write relatively short programs
+that solve algorithmic or combinatorial problems.  In fact, not only
+the programs will be short&#x2014;never more than 50 lines, and most often
+less than 20 lines of code&#x2014;but we will also intentionally limit
+ourselves to some very basic features of the Python language.
+</p>
+
+<p>
+This is a <i>read-do</i> document.  You must read the text slowly, a
+paragraph or even a sentence at a time.  Don&rsquo;t rush through it or just
+skim it.  And as soon as you have at least a basic idea of the
+concepts described in the text, you immediately put them into practice
+with the many examples and exercises listed in the text.  You should
+also practice with other examples that you create and experiment with
+out of your own curiosity.  This is the best way to learn programming
+anyway&#x2014;or anything else, really.
+</p>
+
+<div id="outline-container-orgb905e30" class="outline-2">
+<h2 id="orgb905e30">Preliminaries</h2>
+<div class="outline-text-2" id="text-orgb905e30">
+<p>
+I assume you have Python installed on your computer.  Specifically, I
+assume you have Python-3.  I also assume that you have some basic
+experience in using a command shell and a text editor.  You may also
+choose to use an integrated development environment (with an
+integrated editor) but that is not at all necessary.
+</p>
+
+<p>
+In essence, you should be able to run Python as an interactive shell,
+edit a Python program (as a text file), and run a Python program as a
+standalone program or within an interactive Python shell.  Let&rsquo;s
+review these preliminary skills by example.
+</p>
+</div>
+
+<div id="outline-container-org2f11724" class="outline-3">
+<h3 id="org2f11724">Running Python as an Interactive Command Shell</h3>
+<div class="outline-text-3" id="text-org2f11724">
+<p>
+Run Python as an interactive shell by opening a command shell
+(typically through a terminal application) and by running the command
+<code>python3</code>.  You should see something like this:
+</p>
+<pre class="example" id="org1941d23">$ python3
+Python 3.8.5 (default, Jul 28 2020, 12:59:40)
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 
+</pre>
+
+<p>
+You might get something slightly different.  But if you get something
+completely different, then you probably don&rsquo;t have Python-3 installed
+on your computer, or in any case your shell can&rsquo;t find it.  If that is
+the case then you should ask your friendly teacher (yours truly) or a
+fellow student to help you out.
+</p>
+
+<p>
+Notice that there are <i>two</i> shells here.  The first one is what I call
+a <i>command</i> shell, which is sometimes also called terminal shell
+because it is what you typically run when you open a terminal
+application.  Unfortunately, these names can be confusing.
+Essentially all shells are &ldquo;command&rdquo; shells, since their job is to
+read commands from a user interface (the terminal), execute those
+commands, and then write the resulting output on the same or another
+interface.
+</p>
+
+<p>
+Anyway, I will distinguish the <i>command</i> shell from the <i>Python</i>
+shell.  This first shell is the one taking commands like <code>ls</code>,
+<code>mkdir</code>, and <code>cd</code>, and also applications like <code>python3</code>, which is what
+we run here.  The prompt of this command shell is a single <code>$</code>
+character (dollar sign).  You may see a different prompt depending on
+your configuration and preferences.  However, in these examples, I
+will use the single <code>$</code> character to identify the prompt of the
+command shell.
+</p>
+
+<p>
+Then, from that command shell we run <code>python3</code> and obtain the prompt
+<code>&gt;&gt;&gt;</code> of the <i>Python</i> shell, which consists of three <code>&gt;</code> characters
+one after the other.  This means that the command shell runs
+<code>python3</code>, which is the Python shell, that takes over the input and
+output and now starts prompting you to input commands.
+</p>
+
+<p>
+At this point, you can type <i>Python</i> commands, and the Python shell
+will execute them.  For example:
+</p>
+
+<pre class="example" id="orgde390b4">&gt;&gt;&gt; print('Ciao!')
+Ciao!
+&gt;&gt;&gt; 
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc3a3ecf" class="outline-3">
+<h3 id="orgc3a3ecf">Running a Python Program</h3>
+<div class="outline-text-3" id="text-orgc3a3ecf">
+<p>
+First of all, you should create a directory within which to experiment
+with the following examples.  I suggest you do that using a command
+shell, since the next steps will require you to run commands from a
+command shell anyway:
+</p>
+
+<pre class="example" id="org6d078d4">$ mkdir programming
+$ cd programming
+$ 
+</pre>
+
+<p>
+Now you are in your new <code>programming</code> directory, so go ahead and create
+a file called <code>ciao.py</code> containing the following text:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-builtin">print</span>(<span class="face-string">'Ciao!'</span>)
+<span class="face-builtin">print</span>(<span class="face-string">'This is your first Python program.'</span>)
+</pre>
+</div>
+
+<p>
+Seriously, do it!  Don&rsquo;t just read through this document.  This is a
+<i>read-do</i> document.  You read an example, and then you try it yourself
+right away.
+</p>
+
+<p>
+So again: create and edit a file called <code>ciao.py</code>.  To do that, you
+should use a good text editor.  My favorite one is <a href="https://www.gnu.org/software/emacs/">Emacs</a>, but you
+should use whatever works well for you.  Be warned though, that some
+editors will mess things up, because they don&rsquo;t write files in plain
+text format.  So, make sure that the file you just edited and saved
+contains exactly those two lines of plain text.  You can do that from
+the terminal shell with the <code>cat</code> command:
+</p>
+
+<pre class="example" id="orgaef9040">$ ls ciao.py
+ciao.py
+$ cat ciao.py
+print('Ciao!')
+print('This is your first Python program.')
+</pre>
+
+<p>
+If this is what you see, then you are now ready to <i>run</i> your Python
+program.  From the same command shell:
+</p>
+
+<pre class="example" id="orgf38d112">$ python3 ciao.py
+Ciao!
+This is your first Python program.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga1fff4b" class="outline-3">
+<h3 id="orga1fff4b">Reading a Python Program and Then Using Python Interactively</h3>
+<div class="outline-text-3" id="text-orga1fff4b">
+<p>
+In many examples below, you will want to write a program&#x2014;or more
+specifically write an algorithm in the form of a Python
+<i>function</i>&#x2014;and then run that program (function) interactively,
+perhaps to test it with different arguments.  Let&rsquo;s see how you can
+do that.
+</p>
+
+<p>
+In a source file called <code>greetings.py</code> write a function called
+<code>ciao(name)</code> as follows.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">ciao</span>(name):
+    <span class="face-builtin">print</span>(<span class="face-string">'Ciao'</span>, name)
+    <span class="face-builtin">print</span>(<span class="face-string">'Have fun with Emacs!'</span>)
+</pre>
+</div>
+
+<p>
+We&rsquo;re getting ahead of ourselves defining &ldquo;functions&rdquo; here, but that&rsquo;s
+okay.  Just make sure the spacing is correct though.  The spaces
+before the two <code>print</code> commands are important, as we will see in
+detail later.  For now just make sure those two lines have the same
+number of initial spaces (indentation).
+</p>
+
+<p>
+Now we could run this <code>greetings.py</code> program the same way we did with
+<code>ciao.py</code> in the example above.  However, that is really not what we
+want.  In fact, if we run it as a program, we don&rsquo;t see any output.
+Try it yourself:
+</p>
+
+<pre class="example" id="org0220c22">$ python3 greetings.py
+$ 
+</pre>
+
+<p>
+And this is correct.  The <code>greetings.py</code> program defines a function
+<code>ciao(name)</code> but does not use it.  Instead, what we want is to use that
+function with some arguments.  For example, we might want to call the
+<code>ciao</code> function as follows, from a Python shell:
+</p>
+
+<pre class="example" id="org38c53dd">&gt;&gt;&gt; ciao("Antonio")
+Ciao Antonio
+Have fun with Emacs!
+&gt;&gt;&gt; 
+</pre>
+
+<p>
+In other words, we want to run a Python shell that reads the
+definition of the <code>ciao</code> function from <code>greetings.py</code>, and then
+processes the Python command <code>ciao("Antonio")</code>.  The way to do that is
+to run python with the <code>-i</code> option, which makes it run in
+&ldquo;interactive&rdquo; mode:
+</p>
+
+<pre class="example" id="orgb8d742f">$ python3 -i greetings.py
+&gt;&gt;&gt; ciao("antonio")
+Ciao antonio
+Have fun with Emacs!
+&gt;&gt;&gt; ciao("mamma")
+Ciao mamma
+Have fun with Emacs!
+</pre>
+
+<p>
+Notice that we invoke Python from the command shell, which starts the
+Python shell from which we can invoke the function defined in
+<code>greetings.py</code>.  To exit the python shell and therefore return to the
+command shell, you can invoke the <code>exit()</code> function.
+</p>
+
+<pre class="example" id="org78a5d63">&gt;&gt;&gt; ciao("mamma")
+Ciao mamma
+Have fun with Emacs!
+&gt;&gt;&gt; exit()
+$ 
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org137c141" class="outline-2">
+<h2 id="org137c141">Basic Arithmetic Expressions</h2>
+<div class="outline-text-2" id="text-org137c141">
+<p>
+Python supports numbers and basic arithmetic.  Try it yourself using
+the interactive Python shell:
+</p>
+
+<pre class="example" id="orgb4ce0c7">&gt;&gt;&gt; 1 + 1
+2
+&gt;&gt;&gt; 34 - 11
+23
+&gt;&gt;&gt; 3 * 7
+21
+</pre>
+
+<p>
+Easy.  Makes sense.  But did you try it yourself?  Seriously, do it!
+As I said before, this is a <i>read-do</i> document.  You should try every
+single example yourself.  In fact, once you get the gist of it, you
+should invent and try more and more examples.
+</p>
+
+<p>
+So, now you know that Python can read numbers, and can add, subtract,
+and multiply numbers.  What&rsquo;s next?  Division.  There are in fact
+three fundamental division operations we need to know about:
+</p>
+
+<pre class="example" id="orgca1c1a9">&gt;&gt;&gt; 5 / 2
+2.5
+&gt;&gt;&gt; 6 / 3
+2.0
+</pre>
+
+<p>
+The division operator <code>/</code> divides its two operands, as you would
+imagine, and always returns a floating point number.  However,
+sometimes, especially in programming algorithms that work on discrete
+structures, we want an integer division:
+</p>
+
+<pre class="example" id="org6e1da4a">&gt;&gt;&gt; 13 // 5
+2
+&gt;&gt;&gt; 13 % 5
+3
+</pre>
+
+<p>
+The integer-division operator <code>//</code> does exactly that: <code>a // b</code> gives
+you the <i>quotient</i> of \(a\) over \(b\), meaning the number of times that
+\(b\) fits entirely in \(a\).  Correspondingly, <code>a % b</code> is the <i>remainder</i>
+of the integer division of \(a\) over \(b\).  So, both the quotient and
+the remainder are whole numbers, also known as <i>integers</i>.
+</p>
+
+<p>
+We won&rsquo;t need any more numeric operations in the Algorithms course,
+really.  Although of course you can combine those operators in long
+expressions, possibly grouping sub-expressions using parentheses.
+For example:
+</p>
+
+<pre class="example" id="orgadea58f">&gt;&gt;&gt; 10 - (3 + 1)
+6
+&gt;&gt;&gt; 27 % (2*(7 - 2))
+7
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3d04ee6" class="outline-2">
+<h2 id="org3d04ee6">Variables</h2>
+<div class="outline-text-2" id="text-org3d04ee6">
+<p>
+Python can memorize values for you, so that you can use them again
+later.   For example, you can memorize the result of an arithmetic
+expression:
+</p>
+
+<pre class="example" id="orgbf7f1f0">&gt;&gt;&gt; x = 10 + 2*5
+&gt;&gt;&gt; 
+</pre>
+
+
+<p>
+The command <code>x = 10 + 2*5</code> is an <i>assignment</i>.  It looks like a
+mathematical equation, but that&rsquo;s not what it is.  What the equal sign
+really says is: first, compute the value of the expression on the
+right-hand side of the <code>=</code>, and then store that value in a memory cell
+called \(x\).  So, the command <code>x = 10 + 2*5</code> does not itself produce an
+output or a result, but it does change the memory of the computer.  In
+fact, now you can read the value of \(x\):
+</p>
+
+<pre class="example" id="orgaaaaf24">&gt;&gt;&gt; x = 10 + 2*5
+&gt;&gt;&gt; x
+20
+</pre>
+
+<p>
+Notice that \(x\) is now a valid command that simply returns (reads) the
+value 20 stored in the memory cell named \(x\).  The Python shell reads
+and prints that value.
+</p>
+
+<p>
+To reemphasize the idea of an assignment, as opposed to a mathematical
+equation, try now the following command
+</p>
+
+<pre class="example" id="org9be1768">&gt;&gt;&gt; x = x + 1
+&gt;&gt;&gt; 
+</pre>
+
+<p>
+Once again, the command <code>x = x + 1</code> is not an equation&#x2014;for which
+there would be no solution anyway&#x2014;but rather an assignment, which
+says: compute <code>x + 1</code>, and then store the resulting value into a
+memory location called \(x\).  Now, <code>x + 1</code> is an expression that reads
+a value from \(x\), and the assignment then stores the value of the
+whole expression into \(x\).  You might think that that is weird or that
+it would cause some kind of circular dependency.  But that&rsquo;s perfectly
+okay.  The value initially stored in \(x\) is 20 (from the examples
+above), so <code>x + 1</code> is 21, which is what is stored in \(x\) after the
+assignment command.  In fact, try these commands now:
+</p>
+
+<pre class="example" id="org52cf1eb">&gt;&gt;&gt; x
+21
+&gt;&gt;&gt; x + 5
+26
+&gt;&gt;&gt; x
+21
+&gt;&gt;&gt; x = x + 5
+&gt;&gt;&gt; x
+26
+</pre>
+
+<p>
+You can of course have many variables, and you can use them however
+you like in expressions.  Now you have \(x\) whose current value is 26.
+What happens if you then run the following command?
+</p>
+
+<pre class="example" id="org5389107">&gt;&gt;&gt; y = x - 21
+</pre>
+
+<p>
+Simple, you now have two variables&#x2014;two memory cells&#x2014;one named \(x\)
+that contains value 26, and another one named \(y\) that contains
+value 5.  Now you can write something like this:
+</p>
+
+<pre class="example" id="org82d9b45">&gt;&gt;&gt; y = x + y - 1
+</pre>
+
+<p>
+What is the effect of that command?  We know that it&rsquo;s an assignment
+that first computes the value of <code>x + y - 1</code> and then stores that
+value into \(y\).  To compute <code>x + y - 1</code>, Python reads the value of the
+\(x\) memory cell, then reads the value of the \(y\) memory cell, adds the
+two values, and then subtracts 1.  The result of that expression is
+30, which Python then stores in the \(y\) memory cell.
+</p>
+
+<p>
+If an expression refers to a variable name that was never assigned,
+Python prints an error message, as in this example:
+</p>
+
+<pre class="example" id="orgd2114dd">&gt;&gt;&gt; y = z + x
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name 'z' is not defined
+</pre>
+</div>
+
+<div id="outline-container-orgda5663b" class="outline-3">
+<h3 id="orgda5663b">Exercise</h3>
+<div class="outline-text-3" id="text-orgda5663b">
+<p>
+What is the content of Python&rsquo;s memory after the following commands?
+</p>
+
+<pre class="example" id="orgdcb2a61">&gt;&gt;&gt; x = 2
+&gt;&gt;&gt; y = 1
+&gt;&gt;&gt; y = x
+&gt;&gt;&gt; x = y
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge04b0cb" class="outline-3">
+<h3 id="orge04b0cb">Exercise</h3>
+<div class="outline-text-3" id="text-orge04b0cb">
+<p>
+What is the content of Python&rsquo;s memory after the following commands?
+</p>
+
+<pre class="example" id="orgf5e146a">&gt;&gt;&gt; x = 1
+&gt;&gt;&gt; y = 1
+&gt;&gt;&gt; y = x - y
+&gt;&gt;&gt; x = y - x
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2c5d9a4" class="outline-3">
+<h3 id="org2c5d9a4">Exercise</h3>
+<div class="outline-text-3" id="text-org2c5d9a4">
+<p>
+Write commands to swap the values of \(x\) and \(y\), for example after
+the example above.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8385104" class="outline-2">
+<h2 id="org8385104">Conditional Instructions</h2>
+<div class="outline-text-2" id="text-org8385104">
+<p>
+So far we have seen individual commands and sequences of commands in
+Python.  Python executes a <i>sequence</i> of commands by executing each
+command, one after the other, in the given order.
+</p>
+
+<p>
+If this is all we had, we wouldn&rsquo;t be able to do much &ldquo;programming&rdquo;,
+really.  A program is most often supposed to behave differently in
+different situations.  For example, say we have an accounting program
+where a positive balance must be printed as a &ldquo;gain&rdquo; while a negative
+number must be printed as a &ldquo;loss&rdquo;, and a zero balance must be printed
+as &ldquo;zero&rdquo;.  In Python we would write a program like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">print_balance</span>(b):
+    <span class="face-keyword">if</span> b <span class="face-operator">&gt;</span> 0:
+        <span class="face-builtin">print</span>(<span class="face-string">'gain:'</span>, b)
+    <span class="face-keyword">elif</span> b <span class="face-operator">&lt;</span> 0:
+        <span class="face-builtin">print</span>(<span class="face-string">'loss:'</span>, <span class="face-operator">-</span>b)
+    <span class="face-keyword">else</span>:
+        <span class="face-builtin">print</span>(<span class="face-string">'zero'</span>)
+</pre>
+</div>
+
+<p>
+Write this program in a source file called <code>print_balance.py</code> and try
+it with the interactive shell by running <code>python3 -i
+print_balance.py</code>.  Once again, pay attention to the spacing.  Make
+sure the indentation is consistent as in the code above.  You can now
+try it with various arguments:
+</p>
+
+<pre class="example" id="orge3e8f1b">&gt;&gt;&gt; print_balance(200)
+gain: 200
+&gt;&gt;&gt; print_balance(-75)
+loss: 75
+&gt;&gt;&gt; print_balance(10.5)
+gain: 10.5
+&gt;&gt;&gt; print_balance(0.0)
+zero
+&gt;&gt;&gt; 
+</pre>
+
+<p>
+In Python you can write the conditions of the <code>if</code> command (and
+<code>elif</code>) in the intuitive way, meaning very much like you&rsquo;d write
+conditions in English.  For example, in English you might say, if it
+rains or it&rsquo;s cloudy, we&rsquo;ll play chess.  And in Python, you&rsquo;d say
+pretty much the same:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">if</span> weather <span class="face-operator">==</span> <span class="face-string">'rain'</span> <span class="face-keyword">or</span> weather <span class="face-operator">==</span> <span class="face-string">'cloud'</span>:
+    play_chess()
+</pre>
+</div>
+
+<p>
+Or you might say, if the temperature is greater or equal to 5 and less
+than or equal to 30, and if it&rsquo;s sunny, we&rsquo;ll play basketball. In
+Python:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">if</span> temperature <span class="face-operator">&gt;=</span> 5 <span class="face-keyword">and</span> temperature <span class="face-operator">&lt;=</span> 30 <span class="face-keyword">and</span> weather <span class="face-operator">==</span> <span class="face-string">'sun'</span>:
+    play_basketball()
+</pre>
+</div>
+
+<p>
+Or you might say, if the temperature is less than 5 and it&rsquo;s not
+snowing, we&rsquo;ll go skiing:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">if</span> temperature <span class="face-operator">&lt;</span> 5 <span class="face-keyword">and</span> weather <span class="face-operator">!=</span> <span class="face-string">'snow'</span>:
+    go_skiing()
+</pre>
+</div>
+
+<p>
+Thus <code>==</code> means <i>equal to</i>, <code>!=</code> means <i>not equal to</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9d64677" class="outline-2">
+<h2 id="org9d64677">Code Blocks</h2>
+<div class="outline-text-2" id="text-org9d64677">
+<p>
+By now you must have figured out that Python groups commands together
+by level of indentation.  Incidentally, we used the term &ldquo;command&rdquo;
+here because we have worked primarily within an interactive Python
+shell, where those commands are executed immediately by the shell.
+However, those can just as well be part of a program.  In that case
+we also call them &ldquo;instructions&rdquo; or &ldquo;statements&rdquo;.  Anyway, back to
+indentation and code blocks.
+</p>
+
+<p>
+In programming, it is essential to group instructions together.  A
+<i>program</i> is in fact a group of instructions.  More specifically, a
+<i>function</i> is a group of instructions that has a name and some
+parameters.  In our very first example, we define a function called
+<code>ciao</code> that takes an argument that the code of the function can refer
+to as <code>name</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">ciao</span>(name):
+    <span class="face-builtin">print</span>(<span class="face-string">'Ciao'</span>, name)
+    <span class="face-builtin">print</span>(<span class="face-string">'Have fun with Emacs!'</span>)
+</pre>
+</div>
+
+<p>
+In other words, the instructions <code>print('Ciao', name)</code> and
+<code>print('Have fun with Emacs!')</code> are grouped together in sequence, and
+we give that sequence the name <code>ciao</code> and a parameter named <code>name</code>, so
+that later we can <i>invoke</i> that sequence of instructions with
+something like <code>ciao('Antonio')</code>.
+</p>
+
+<p>
+That sequence of instructions is introduced by a semicolon (<code>:</code>) at the
+end of the <code>def</code> command, and consists of all the instructions
+indented by four spaces with respect to the <code>def</code> command.
+</p>
+
+<p>
+Similarly, we have seen that an <code>if</code> statement introduces a code
+block, and so does a corresponding <code>else</code> statement, also with a
+semicolon at the end of the <code>if</code> and <code>else</code> commands.  For example,
+you can write:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">if</span> n <span class="face-operator">%</span> 2 <span class="face-operator">==</span> 0:
+    <span class="face-builtin">print</span>(n, <span class="face-string">'is even'</span>)
+    <span class="face-builtin">print</span>(<span class="face-string">'so, I can split it in half.'</span>)
+    <span class="face-builtin">print</span>(<span class="face-string">'half of'</span>,n,<span class="face-string">'is'</span>,n<span class="face-operator">//</span>2)
+<span class="face-keyword">else</span>:
+    <span class="face-builtin">print</span>(n, <span class="face-string">'is odd'</span>)
+    <span class="face-builtin">print</span>(<span class="face-string">'so, I can split in half'</span>,n,<span class="face-string">'+ 1'</span>)
+    <span class="face-builtin">print</span>(<span class="face-string">'half of'</span>,n,<span class="face-string">'+ 1 is'</span>,(n<span class="face-operator">+</span>1)<span class="face-operator">//</span>2)
+</pre>
+</div>
+
+<p>
+At a high-level, this code says: if \(n\) is an even number&#x2014;we check
+that by checking that the remainder of the integer division by 2 is
+zero&#x2014;then do something, otherwise do something else.  The
+<i>something</i> part is defined by the code block after the <code>if</code>
+statement.  The <i>something else</i> part is the code block after then
+<code>else</code> statement.
+</p>
+
+<p>
+In these examples, we use four spaces for the indentation of a block
+of instructions.  In fact, you can use three or five or any other
+number of spaces.  It is essential, however, that all the instructions
+in a block be indented by the same amount of spaces.
+</p>
+</div>
+
+<div id="outline-container-org0df4281" class="outline-3">
+<h3 id="org0df4281">Exercise</h3>
+<div class="outline-text-3" id="text-org0df4281">
+<p>
+Write a function <code>rectangle_area(x1,y1,x2,y2)</code> that, given the
+coordinates \((x_1,y_1)\) and \((x_2,y_2)\) of two opposite vertices of an
+axis-aligned rectangle, prints the area of the rectangle.  An
+axis-aligned rectangle is such that its sides are parallel to the \(X\)
+or \(Y\) axis.  You must not use any function or language features other
+than the ones we have seen so far.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf988179" class="outline-2">
+<h2 id="orgf988179">Loops</h2>
+<div class="outline-text-2" id="text-orgf988179">
+<p>
+We have seen sequences of instructions and conditional instructions.
+This is still not enough.  We need to somehow instruct the computer to
+do something repeatedly.  For example, say you want a program to print
+the word <code>'ciao'</code> a number of times.  If you want to print <code>'ciao'</code>
+three times, you could write a sequence of instructions:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-builtin">print</span>(<span class="face-string">'ciao'</span>)
+<span class="face-builtin">print</span>(<span class="face-string">'ciao'</span>)
+<span class="face-builtin">print</span>(<span class="face-string">'ciao'</span>)
+</pre>
+</div>
+
+<p>
+But what if you want to print <code>'ciao'</code> <i>twenty</i> times?  You wouldn&rsquo;t
+want to write the same instruction twenty times in your program, would
+you?  Of course not.  And in some cases you don&rsquo;t even know ahead of
+time how many times you need to repeat the print command.  So,
+instead, you&rsquo;d want to give the computer a single print instruction and
+then tell it to <i>repeat</i> that instruction twenty times, or any given
+number of times.  We call these repetitions <i>loops</i>, because we think
+of the execution as a path through the program instructions, and in
+this case the execution path loops back to the same instructions a
+number of times.  A simple way to write one such loop in Python is
+this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(20):
+    <span class="face-builtin">print</span>(<span class="face-string">'ciao'</span>)
+</pre>
+</div>
+
+<p>
+This tells the computer to repeat 20 times the block of instructions
+that follows the <code>for</code> instruction (indented).  In that block of
+instructions, which we also call the <i>body</i> of the loop, you also have
+the variable \(i\).  In fact, you might want to try and see what happens
+if you also print the value of that variable:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(20):
+    <span class="face-builtin">print</span>(<span class="face-string">'ciao'</span>, i)
+</pre>
+</div>
+
+<p>
+Anyway, this <code>for</code> instruction works if you know exactly how many
+times you need to print.  In fact, it is even more generic than that.
+It works with any sequence that you can iterate on.  So, in general
+you write <code>for x in</code> <i>sequence</i> <code>:</code>, and that repeats the body of the
+loop for every value \(x\) in the given sequence.  For example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">for</span> i <span class="face-keyword">in</span> [<span class="face-string">'vanilla'</span>, <span class="face-string">'chocolate'</span>, <span class="face-string">'strawberry'</span>]:
+    <span class="face-builtin">print</span>(<span class="face-string">'I love'</span>, i, <span class="face-string">'ice cream!'</span>)
+</pre>
+</div>
+
+<p>
+So, we now know how to loop over the elements of a given sequence.
+Very good.  But this isn&rsquo;t enough either!  What if you don&rsquo;t know
+ahead of time how many times you need to repeat some instructions?
+What if you need to run the instructions in the loop a number of times
+before you can decide to stop the loop?  For example, you might want
+to repeat some action until you find something, or until you get to a
+certain target after some calculations.  You can do this by writing a
+<i>while</i>-loop:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-variable-name">i</span> <span class="face-operator">=</span> 0
+<span class="face-keyword">while</span> i <span class="face-operator">&lt;</span> 20:
+    <span class="face-builtin">print</span>(<span class="face-string">'ciao'</span>, i)
+    <span class="face-variable-name">i</span> <span class="face-operator">=</span> i <span class="face-operator">+</span> 1
+</pre>
+</div>
+
+<p>
+Well, you might say that this while-loop is really nothing new, since
+it&rsquo;s exactly what we were doing before with <code>for i in range(20)</code>.  And
+you&rsquo;d be right, it is exactly the same thing.  In fact, the purpose of
+this first example was to show how while-loops work.  It goes like
+this: you test the condition of the <code>while</code> instruction, and if it&rsquo;s
+true then you execute the body of the loop, that is, the block of
+instructions that follow the <code>while</code> instruction.  At the end of that
+block of instructions, you loop back to the <code>while</code> instruction, again
+test its condition, and if it&rsquo;s true again, you again execute the body
+of the loop, and so on.  You stop when you loop back to the <code>while</code>
+instruction and the condition turns out to be false, at which point
+the execution skips the body of the loops and continues with whatever
+instructions (if any) follow the body.
+</p>
+
+<p>
+The above example is intentionally simple.  In fact, we wrote it to
+mimic the previous for-loop.  However, while-loops are a very general
+programming mechanism, more general than for-loops, or at least the
+type of for-loops that we see in this course.
+</p>
+
+<p>
+Would you like to see a more interesting example?  Here, run this
+program:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-variable-name">n</span> <span class="face-operator">=</span> <span class="face-builtin">int</span>(<span class="face-builtin">input</span>(<span class="face-string">'choose an integer n &gt; 0: '</span>))
+<span class="face-keyword">while</span> n <span class="face-operator">!=</span> 1:
+    <span class="face-builtin">print</span>(n)
+    <span class="face-keyword">if</span> n <span class="face-operator">%</span> 2 <span class="face-operator">==</span> 0:
+        <span class="face-variable-name">n</span> <span class="face-operator">=</span> n <span class="face-operator">//</span> 2
+    <span class="face-keyword">else</span>:
+        <span class="face-variable-name">n</span> <span class="face-operator">=</span> 3<span class="face-operator">*</span>n <span class="face-operator">+</span> 1
+</pre>
+</div>
+
+<p>
+Did you run it?  Seriously.  I told you, this is a read-do document.
+Plus this example is a really good one.  Trust me!  In fact, try 27.
+Go ahead.  I&rsquo;ll wait for you. (&#x2026;)  Pretty weird eh?  Can you input a
+number that makes the code loop forever?  I bet you can&rsquo;t.  But if you
+find one of those numbers, please do let me know!
+</p>
+
+<p>
+Two more points about loops.  What if we need to break out of a loop?
+This is useful in for-loops, which would otherwise keep repeating the
+body for all the elements in the <code>for</code> iteration.  While-loops are
+more amenable to early termination, since you could write the
+termination condition in the <code>while</code> instruction.  However, that
+condition is evaluated only when the execution completes the body and
+goes back to the <code>while</code> instruction.  But sometimes it&rsquo;s just more
+convenient to check some condition and break from inside the loop.  In
+Python you can do that with the <code>break</code> instruction, which works for
+both <i>while</i> and <i>for</i>-loops.  For example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-variable-name">n</span> <span class="face-operator">=</span> <span class="face-builtin">int</span>(<span class="face-builtin">input</span>(<span class="face-string">'choose an integer n &gt; 1: '</span>))
+<span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(2,n):
+    <span class="face-keyword">if</span> n <span class="face-operator">%</span> i <span class="face-operator">==</span> 0:
+        <span class="face-builtin">print</span>(<span class="face-string">'composite'</span>)
+        <span class="face-keyword">break</span>
+</pre>
+</div>
+
+<p>
+Similarly, sometimes it&rsquo;s useful to short-cut the body of a loop and
+go back immediately for the next iteration.  For example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-variable-name">n</span> <span class="face-operator">=</span> <span class="face-builtin">int</span>(<span class="face-builtin">input</span>(<span class="face-string">'choose an integer n &gt; 2: '</span>))
+<span class="face-variable-name">C</span> <span class="face-operator">=</span> [<span class="face-constant">False</span>]<span class="face-operator">*</span>(n)
+<span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(2,n):
+    <span class="face-keyword">if</span> C[i]:
+        <span class="face-keyword">continue</span>
+    <span class="face-keyword">for</span> j <span class="face-keyword">in</span> <span class="face-builtin">range</span>(i<span class="face-operator">*</span>i,n,i):
+        <span class="face-variable-name">C</span>[j] <span class="face-operator">=</span> <span class="face-constant">True</span>
+    <span class="face-builtin">print</span>(i)
+</pre>
+</div>
+
+<p>
+Did I not say this is a read-do document?  Do it.  Try this code yourself!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org585a653" class="outline-2">
+<h2 id="org585a653">Arrays</h2>
+<div class="outline-text-2" id="text-org585a653">
+<p>
+Computers are useful to process many values, not just one or two.  So,
+how do you memorize many values?  If you know you have three values,
+you can put the first one in a variable called \(x\), the second one in
+another variable \(y\), and the third one in \(z\).  But you can
+immediately see that that doesn&rsquo;t work for <i>many</i> values.  In fact, it
+doesn&rsquo;t even work for a few values if you don&rsquo;t know how many you
+have.
+</p>
+
+<p>
+What you want is what you often see in mathematical expressions where
+you have a collection of elements \(a_1, a_2, \ldots, a_n\) and you
+refer to each element \(a_i\) by its numeric index \(i\).  In Python, you
+can do the same with an <i>array.</i> In fact, we have already seen an
+example of an array before, remember?  You don&rsquo;t?  Okay, no problem.
+It&rsquo;s a good exercise: go back through the text and see if you spot the
+array.  <i>Do it!</i>  Anyway, here&rsquo;s another one (in a Python shell):
+</p>
+
+<pre class="example" id="org3ab6989">&gt;&gt;&gt; A = [ 2, 3, 5, 7, 11, 13, 17 ]
+</pre>
+
+<p>
+\(A\) is an array.  An array represents a <i>sequence.</i> I should say,
+those are actually called &ldquo;lists&rdquo; in Python jargon.  But they are
+really arrays&#x2014;trust me, they are arrays&#x2014;so that&rsquo;s what I&rsquo;ll call
+them.  The nice thing about arrays is that you can access every
+element of the sequence by its position, as you do in those nice
+mathematical expressions. Except that for mathematicians the first
+element is in position 1, whereas in Python the first position is 0.
+So, this is how you access the first element:
+</p>
+
+<pre class="example" id="org34af661">&gt;&gt;&gt; A = [ 2, 3, 5, 7, 11, 13, 17 ]
+&gt;&gt;&gt; A[0]
+2
+</pre>
+
+<p>
+Notice that <code>A[0]</code> is really like the name of a variable (a memory
+cell) that stores the value in position 0 (the first one).  And you
+can of course use another variable, say \(i\), as the position in \(A\).
+For example:
+</p>
+
+<pre class="example" id="org46f9512">&gt;&gt;&gt; i = 2
+&gt;&gt;&gt; A[i]
+5
+</pre>
+
+<p>
+In fact, this is how you could print all the elements in \(A\):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-variable-name">i</span> <span class="face-operator">=</span> 0
+<span class="face-keyword">while</span> i <span class="face-operator">&lt;</span> 7:
+    <span class="face-builtin">print</span>(A[i])
+    <span class="face-variable-name">i</span> <span class="face-operator">=</span> i <span class="face-operator">+</span> 1
+</pre>
+</div>
+
+<p>
+Here we loop from position 0 to position 6 (not 7) because we know
+that we have seven elements.  But what if we don&rsquo;t know the length of
+an array ahead of time?  In Python, we can use the predefined function
+<code>len(A)</code>.  Try it yourself:
+</p>
+
+<pre class="example" id="org4248971">&gt;&gt;&gt; A = ['chocolate', 'vanilla', 'strawberry']
+&gt;&gt;&gt; len(A)
+3
+&gt;&gt;&gt; A = []
+&gt;&gt;&gt; len(A)
+0
+</pre>
+
+<p>
+In fact, this is a more generic way to print the elements of an array
+<code>A</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(<span class="face-builtin">len</span>(A)):
+    <span class="face-builtin">print</span>(A[i])
+</pre>
+</div>
+
+<p>
+or better yet, remember that a for-loop iterates through the elements
+of a <i>sequence</i>.  And an array is definitely a sequence, so my
+preferred way to print the values in an array \(A\) is this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">for</span> a <span class="face-keyword">in</span> A:
+    <span class="face-builtin">print</span>(a)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga10aa79" class="outline-3">
+<h3 id="orga10aa79">Adding or Removing an Element at the End of an Array</h3>
+<div class="outline-text-3" id="text-orga10aa79">
+<p>
+For our purposes, there are only two ways we modify the length of an
+array.  We can either add an element at the end, or we can remove the
+last element.  For example, this is how we can read a sequence of
+numbers from the input:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-variable-name">A</span> <span class="face-operator">=</span> []
+<span class="face-keyword">while</span> <span class="face-constant">True</span>:
+    <span class="face-variable-name">line</span> <span class="face-operator">=</span> <span class="face-builtin">input</span>()
+    <span class="face-keyword">if</span> line <span class="face-operator">==</span> <span class="face-string">''</span>:
+        <span class="face-keyword">break</span>
+    <span class="face-keyword">for</span> x <span class="face-keyword">in</span> line.split():
+        A.append(<span class="face-builtin">int</span>(x))
+</pre>
+</div>
+
+<p>
+Here <code>A.append()</code> adds an element at the end of \(A\), thereby
+increasing \(A\)&rsquo;s length by one.  If instead we want to delete the
+element at the end of \(A\), we write <code>del A[-1]</code> or <code>A.pop()</code>.
+<code>A.pop()</code> also returns the last element that is deleted.
+</p>
+
+<p>
+The Python language provides many other ways to cut or modify
+sequences.  However, we intentionally do not consider them, since they
+often incur hidden complexities.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org34cd471" class="outline-3">
+<h3 id="org34cd471">Exercise</h3>
+<div class="outline-text-3" id="text-org34cd471">
+<p>
+Write a Python function called <code>print_reverse(A)</code> that prints a given
+sequence \(A\) in reverse order.  For example
+</p>
+
+<pre class="example" id="orgc990d2a">&gt;&gt;&gt; A = [ 2, 3, 5, 7, 11, 13, 17 ]
+&gt;&gt;&gt; print_reverse(A)
+17
+13
+11
+7
+5
+3
+2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3fe154f" class="outline-3">
+<h3 id="org3fe154f">Exercise</h3>
+<div class="outline-text-3" id="text-org3fe154f">
+<p>
+Write a Python function called <code>print_maximum(A)</code> that prints the
+maximal value in the given sequence \(A\).  For example
+</p>
+
+<pre class="example" id="org4b699c3">&gt;&gt;&gt; A = [ 7, 21, 15, 1, 18, 31, 17 ]
+&gt;&gt;&gt; print_maximum(A)
+31
+</pre>
+
+<p>
+What would you do if you are given an empty sequence?
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc2a51d" class="outline-2">
+<h2 id="orgbc2a51d">Function Definitions</h2>
+<div class="outline-text-2" id="text-orgbc2a51d">
+<p>
+Once you have a program, you&rsquo;ll most likely want to run that program
+multiple times, possibly with many input values.  You&rsquo;ll want to give
+that program a name and some arguments, to then invoke that program
+by name.  In Python, you can do that by defining a <i>function.</i> In
+fact, we have done that already, for example with the
+<code>print_balance(b)</code> function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">print_balance</span>(b):
+    <span class="face-keyword">if</span> b <span class="face-operator">&gt;</span> 0:
+        <span class="face-builtin">print</span>(<span class="face-string">'gain:'</span>, b)
+    <span class="face-keyword">elif</span> b <span class="face-operator">&lt;</span> 0:
+        <span class="face-builtin">print</span>(<span class="face-string">'loss:'</span>, <span class="face-operator">-</span>b)
+    <span class="face-keyword">else</span>:
+        <span class="face-builtin">print</span>(<span class="face-string">'zero'</span>)
+</pre>
+</div>
+
+<p>
+This notion of a &ldquo;function&rdquo; is rather different from the notion of a
+function in mathematics.  One notable difference in the example above
+is that the <code>print_balance(b)</code> function takes an argument (\(b\)) but,
+unlike a mathematical function, does not have a value.
+</p>
+
+<p>
+For our purposes, a function is a <i>program</i>&#x2014;or call it an algorithm,
+or a method, or a subroutine&#x2014;that we can invoke by name.  Such a
+function (program) may or may not take input arguments, and may or may
+not return a value.  For example, the following function takes no
+arguments and returns a value.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">the_answer</span>():
+    <span class="face-variable-name">x</span> <span class="face-operator">=</span> 40
+    <span class="face-variable-name">y</span> <span class="face-operator">=</span> 2
+    <span class="face-keyword">return</span> x <span class="face-operator">+</span> y
+</pre>
+</div>
+
+<p>
+The return value of the function is determined by the execution of the
+<code>return</code> instruction, which also terminates the execution of the
+function and therefore the execution &ldquo;returns&rdquo; to the code that
+invoked the function.  As an example, try the following code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">is_prime</span>(n):
+    <span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(2,n):
+        <span class="face-keyword">if</span> n <span class="face-operator">%</span> i <span class="face-operator">==</span> 0:
+            <span class="face-keyword">return</span> <span class="face-constant">False</span>
+    <span class="face-keyword">return</span> <span class="face-constant">True</span>
+
+<span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(2,100):
+    <span class="face-keyword">if</span> (is_prime(i)):
+        <span class="face-builtin">print</span>(i,<span class="face-string">'is prime'</span>)
+    <span class="face-keyword">else</span>:
+        <span class="face-builtin">print</span>(i,<span class="face-string">'is composite'</span>)
+</pre>
+</div>
+
+<p>
+Notice that the code of the <code>is_prime</code> function in the example above
+uses a variable called \(i\), as does the code below the definition that
+also invokes the <code>is_prime</code> function.  This is perfectly okay, in the
+sense that the behavior is the intuitive and more conservative one:
+those are two separate variables, even if they have the same name, and
+so there is no conflict.
+</p>
+
+<p>
+More specifically, the \(i\) variable, like all variables assigned
+within the <code>is_prime</code> function, is stored in a private memory area for
+each invocation of the function.  That is, every time you invoke a
+function, even recursively, that invocation sets aside a private
+memory area for the execution of the code of the function.  So, when
+the code assigns a variable, that variable does not refer to other
+variables with the same name elsewhere.  Notice that the parameters of
+a function, such as the variable \(n\) in the function <code>is_prime(n)</code>,
+are treated exactly like ay other private variable in the function.
+</p>
+
+<p>
+One last but important point about function definitions.  Despite the
+fact that local variables are private and do not conflict with
+variables assigned elsewhere with the same name, a function may still
+have side-effects.  That is, a function may change the value of
+variables defined outside the code of the function.  A classic example
+is a function that takes an array as an argument.  Try this code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="face-keyword">def</span> <span class="face-function-name">reset_to_zero</span>(A):
+    <span class="face-keyword">for</span> i <span class="face-keyword">in</span> <span class="face-builtin">range</span>(<span class="face-builtin">len</span>(A)):
+        <span class="face-variable-name">A</span>[i] <span class="face-operator">=</span> 0
+
+<span class="face-variable-name">B</span> <span class="face-operator">=</span> [1, 2, 3]
+reset_to_zero(B)
+<span class="face-builtin">print</span>(B)
+</pre>
+</div>
+
+<p>
+So, think about it, a function <code>prog1(n)</code> that takes a number \(n\) as a
+parameter can change the value of the variable \(n\), but since that \(n\)
+is a private variable, that does not change the value of anything
+outside the function.  However, a function <code>prog2(A)</code> that takes an
+array \(A\) can still change the content of the array outside the
+function.  Why?  What&rsquo;s the difference?  This is a tricky question,
+but it&rsquo;s also an important one.  So, I don&rsquo;t want to dismiss it.  I
+will try to be concise, which means that I can&rsquo;t be very precise.  But
+I still want to describe things as they are <i>in essence.</i>
+</p>
+
+<p>
+So, what&rsquo;s the difference between <code>prog1(n)</code> and <code>prog2(A)</code> when \(n\)
+is a number and \(A\) is an array?  Well, there is no difference! That
+is, Python treats the two functions and the two variables (parameters)
+in exactly the same way.  The difference is in the nature of those
+variables.  In fact, this is the nature of <i>all</i> variables in Python.
+</p>
+
+<p>
+As we said initially, a variable is a space in memory that has a
+name&#x2014;meaning that we can refer to by a certain name within some
+instructions in the program&#x2014;and that can contain a value.  This is
+true for both a variable <code>n = 7</code> containing the integer value 7, an
+array <code>A = [1, 2, 3]</code>.  However, the difference is that some &ldquo;values&rdquo;
+aren&rsquo;t values per-se, but rather <i>references</i> to other areas in memory
+that in turn contain other variables that can take values including
+references to yet-other areas in memory.  That is the case for an
+array.  So, \(A\) per-se is a variable just like \(n\).  But \(A\)&rsquo;s value
+isn&rsquo;t the whole array.  That is, \(A\) does not in itself contain the
+sequence <code>[1,2,3]</code>.  And this shouldn&rsquo;t be surprising, since the
+sequence can be arbitrarily long.  Instead, the sequence is stored
+somewhere else in memory, and \(A\) contains the <i>address</i> of that
+memory location.
+</p>
+
+<p>
+So, let&rsquo;s see what happens when we invoke a function that takes an
+array as a parameter.  The instruction <code>B = [1, 2, 3]</code> in the example
+above reserves some memory for the array itself, meaning a block of
+three variables (memory cells) containing the numeric values 1, 2, and
+3, respectively, plus a variable called \(B\) that contains the address
+of that block of variables.  So then we could write the expression
+<code>B[0]</code> that would refer to the first variable in the block of
+variables referenced by \(B\).
+</p>
+
+<p>
+When we then invoke the function <code>reset_to_zero(B)</code>, that executes the
+code in the function definition with parameter \(A\) initialized
+with&#x2014;meaning, assigned to&#x2014;the value of \(B\).  Think about what
+happens here: \(B\) is a variable whose <i>value</i> is the address of the
+block of variables holding the elements of the array; that value,
+meaning that address, is then assigned to the private parameter
+variable \(A\) in the execution of the <code>reset_to_zero</code> function.  So,
+now <code>reset_to_zero</code> has a variable \(A\) that is distinct from \(B\), but
+that contains a reference to the same block of variables as \(B\).  So,
+the expression <code>A[0]</code> within the code of the <code>reset_to_zero</code> function
+refers to exactly the same variable as <code>B[0]</code> would in the context of
+the invocation of the function.  This is why the effect of the
+function, from the perspective of the caller code, is to change the
+value of the \(B\) array.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b8f574" class="outline-2">
+<h2 id="org4b8f574">More Exercises</h2>
+<div class="outline-text-2" id="text-org4b8f574">
+<p>
+There are three ways to learn computer programming: practicing,
+practicing, and practicing.  So, get on with it!
+</p>
+</div>
+
+<div id="outline-container-org2552f34" class="outline-3">
+<h3 id="org2552f34">Minimum</h3>
+<div class="outline-text-3" id="text-org2552f34">
+<p>
+Write a function <code>minimum(A)</code> that returns the minimum value in \(A\).
+You may assume that the sequence contains at least one element.
+</p>
+</div>
+
+<div id="outline-container-org99d55e4" class="outline-4">
+<h4 id="org99d55e4">Examples</h4>
+<div class="outline-text-4" id="text-org99d55e4">
+<pre class="example" id="org41f64d0">&gt;&gt;&gt; minimum([1,2,3])
+1
+&gt;&gt;&gt; minimum([3,2,1])
+1
+&gt;&gt;&gt; minimum([100,2,55,4,3,2,67,3])
+2
+&gt;&gt;&gt; minimum([7])
+7
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org38e560e" class="outline-3">
+<h3 id="org38e560e">Position in Sequence</h3>
+<div class="outline-text-3" id="text-org38e560e">
+<p>
+Write a function <code>position_in_sequence(A,x)</code> that returns the first
+position in which value \(x\) appears in \(A\).  Positions start from \(0\).
+Return \(-1\) if \(x\) does not appear in \(A\).
+</p>
+</div>
+
+<div id="outline-container-org61ecc9c" class="outline-4">
+<h4 id="org61ecc9c">Examples</h4>
+<div class="outline-text-4" id="text-org61ecc9c">
+<pre class="example" id="org5230c85">&gt;&gt;&gt; position_in_sequence([6, 7, 10, -2, 3], 7)
+1
+&gt;&gt;&gt; position_in_sequence([3, 2, 1, 1, 3, 2, 2, 3, 1], 1)
+2
+&gt;&gt;&gt; position_in_sequence([], 1)
+-1
+&gt;&gt;&gt; position_in_sequence([2, 3, 4, 5], 1)
+-1
+&gt;&gt;&gt; position_in_sequence([2, 3, 4, 5], 2)
+0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb692052" class="outline-3">
+<h3 id="orgb692052">Count Lower</h3>
+<div class="outline-text-3" id="text-orgb692052">
+<p>
+Write a function <code>count_lower(A,x)</code> that returns the number of
+elements in \(A\) whose value is less than \(x\).
+</p>
+</div>
+
+<div id="outline-container-orgb1b081e" class="outline-4">
+<h4 id="orgb1b081e">Examples</h4>
+<div class="outline-text-4" id="text-orgb1b081e">
+<pre class="example" id="org2e1cc1a">&gt;&gt;&gt; count_lower([0,7,10,-2,3], 7)
+3
+&gt;&gt;&gt; count_lower([3, 2, 1, 1, 3, 2, 2, 3, 1], 2)
+3
+&gt;&gt;&gt; count_lower([3, 2, 1, 1, 3, 2, 2, 3, 1], 10)
+9
+&gt;&gt;&gt; count_lower([], 1000000000000000)
+0
+&gt;&gt;&gt; count_lower([2, 3, 4, 5], 1)
+0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf807cdf" class="outline-3">
+<h3 id="orgf807cdf">Check Sorted</h3>
+<div class="outline-text-3" id="text-orgf807cdf">
+<p>
+Write a function <code>check_sorted(A)</code> that returns <code>True</code> if the given
+sequence \(A\) is sorted in non-decreasing order, or <code>False</code> otherwise.
+</p>
+</div>
+
+<div id="outline-container-orgb883253" class="outline-4">
+<h4 id="orgb883253">Examples</h4>
+<div class="outline-text-4" id="text-orgb883253">
+<pre class="example" id="org900d5e4">&gt;&gt;&gt; check_sorted([1,2,3])
+True
+&gt;&gt;&gt; check_sorted([1,3,2])
+False
+&gt;&gt;&gt; check_sorted([])
+True
+&gt;&gt;&gt; check_sorted([7])
+True
+&gt;&gt;&gt; check_sorted([50,50,50])
+True
+&gt;&gt;&gt; check_sorted([43,51,51])
+True
+&gt;&gt;&gt; check_sorted([43,51,50,51,70])
+False
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a9d9b7" class="outline-3">
+<h3 id="org1a9d9b7">Log Base Two</h3>
+<div class="outline-text-3" id="text-org1a9d9b7">
+<p>
+Write a function <code>log_base_two(n)</code> that, given a positive integer \(n\),
+returns the integer logarithm base-two of \(n\), that is, the maximal
+integer \(k\) such that \(2^k\le n\).
+</p>
+</div>
+
+<div id="outline-container-org20dd5fe" class="outline-4">
+<h4 id="org20dd5fe">Examples</h4>
+<div class="outline-text-4" id="text-org20dd5fe">
+<pre class="example" id="orgf2a6138">&gt;&gt;&gt; log_base_two(1)
+0
+&gt;&gt;&gt; log_base_two(2)
+1
+&gt;&gt;&gt; log_base_two(5)
+2
+&gt;&gt;&gt; log_base_two(1000)
+9
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa4d6a2" class="outline-3">
+<h3 id="orgaa4d6a2">Maximal Difference</h3>
+<div class="outline-text-3" id="text-orgaa4d6a2">
+<p>
+Write a function <code>maximal_difference(A)</code> that returns the
+maximal difference between any two elements of the given sequence \(A\).
+</p>
+</div>
+
+<div id="outline-container-org945aea7" class="outline-4">
+<h4 id="org945aea7">Examples</h4>
+<div class="outline-text-4" id="text-org945aea7">
+<pre class="example" id="org140a9c7">&gt;&gt;&gt; maximal_difference([2, 1, 5, 9, 4, 10, 8])
+9
+&gt;&gt;&gt; maximal_difference([1])
+0
+&gt;&gt;&gt; maximal_difference([1, 1, 1])
+0
+&gt;&gt;&gt; maximal_difference([10,-3, 4, 11, 0, 9])
+14
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga3e8daf" class="outline-3">
+<h3 id="orga3e8daf">Minimal Sum</h3>
+<div class="outline-text-3" id="text-orga3e8daf">
+<p>
+Write a function <code>minimal_sum(A, x)</code> that returns <code>True</code> if there are
+some elements in \(A\) whose sum is greater or equal to \(x\), or <code>False</code>
+otherwise.
+</p>
+</div>
+
+<div id="outline-container-org9f56d6a" class="outline-4">
+<h4 id="org9f56d6a">Examples</h4>
+<div class="outline-text-4" id="text-org9f56d6a">
+<pre class="example" id="orgf7bae3d">&gt;&gt;&gt; minimal_sum([], 1)
+False
+&gt;&gt;&gt; minimal_sum([1], 1)
+True
+&gt;&gt;&gt; minimal_sum([3, 2], 4)
+True
+&gt;&gt;&gt; minimal_sum([3, -2], 4)
+False
+&gt;&gt;&gt; minimal_sum([2, 1, 5, -3, 9, 4], 20)
+True
+&gt;&gt;&gt; minimal_sum([32,-3,10,7,-4,18,25], 50)
+True
+&gt;&gt;&gt; minimal_sum([32,-3,10,7,-4,18,25], 94)
+False
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45e76b5" class="outline-3">
+<h3 id="org45e76b5">Isolated Elements</h3>
+<div class="outline-text-3" id="text-org45e76b5">
+<p>
+Write a function <code>isolated_elements(A)</code> that prints, in order, all the
+elements that are different from all their adjacent elements, that is,
+each element that is different from the previous element (if that
+exists) and the next element (if that exists).
+</p>
+</div>
+
+<div id="outline-container-org162cc55" class="outline-4">
+<h4 id="org162cc55">Examples</h4>
+<div class="outline-text-4" id="text-org162cc55">
+<pre class="example" id="orgf3c1276">&gt;&gt;&gt; isolated_elements([])
+&gt;&gt;&gt; isolated_elements([1])
+1
+&gt;&gt;&gt; isolated_elements([7,3])
+7
+3
+&gt;&gt;&gt; isolated_elements([2, 2])
+&gt;&gt;&gt; isolated_elements([2, 2, 3, 2, 3])
+3
+2
+3
+&gt;&gt;&gt; isolated_elements([-2, 2, 2, 2, -2])
+-2
+-2
+&gt;&gt;&gt; isolated_elements([1,2,1,2,1,2,1,2])
+1
+2
+1
+2
+1
+2
+1
+2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0aded31" class="outline-3">
+<h3 id="org0aded31">Repeated Elements</h3>
+<div class="outline-text-3" id="text-org0aded31">
+<p>
+Write a function <code>repeated_adjacent_elements(A)</code> that prints, in
+order, all the elements that are repeated in sub-sequences of two or
+more elements. For every maximal subsequence of identical values,
+<code>repeated_adjacent_elements(A)</code> must print that value <i>only once.</i>
+</p>
+</div>
+
+<div id="outline-container-orgbed84d5" class="outline-4">
+<h4 id="orgbed84d5">Examples</h4>
+<div class="outline-text-4" id="text-orgbed84d5">
+<pre class="example" id="org086fe62">&gt;&gt;&gt; repeated_adjacent_elements([])
+&gt;&gt;&gt; repeated_adjacent_elements([1])
+&gt;&gt;&gt; repeated_adjacent_elements([1, 2])
+&gt;&gt;&gt; repeated_adjacent_elements([3, 3])
+3
+&gt;&gt;&gt; repeated_adjacent_elements([1,-1,7,7,-1,7,1,7,7,7,7,2,2])
+7
+7
+2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0efa742" class="outline-3">
+<h3 id="org0efa742">Compression</h3>
+<div class="outline-text-3" id="text-org0efa742">
+<p>
+Write a function <code>compress_sequence(A)</code> that prints a &ldquo;compressed&rdquo;
+version of the given sequence \(A\).  Compression is obtained by
+printing three or more consecutive elements with equal values with a
+line containing \(x\) <code>*</code> \(k\), where \(x\) is the value of those elements
+and \(k\) is the number of consecutive equal elements.
+</p>
+</div>
+
+<div id="outline-container-org52b5ddf" class="outline-4">
+<h4 id="org52b5ddf">Examples</h4>
+<div class="outline-text-4" id="text-org52b5ddf">
+<pre class="example" id="org08d7864">&gt;&gt;&gt; compress_sequence([-1,1,1,1,7,7,7,7,5,5,1,1,4,1])
+-1
+1 * 3
+7 * 4
+5
+5
+1
+1
+4
+1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd6a946" class="outline-3">
+<h3 id="orgbd6a946">Maximal Increasing Subsequence</h3>
+<div class="outline-text-3" id="text-orgbd6a946">
+<p>
+Write a function <code>maximal_increasing_subsequence(A)</code> that returns the
+maximal length of any strictly increasing sequence of contiguous
+elements of \(A\).  For \(A=-1,1,7,5,-2,1,2,7,7,5,0,1,3,4,1\), the result
+is \(4\), since there is at least one increasing subsequence of length 4
+(e.g., \(-2,1,2,7\)) but there is no increasing subsequence of length 5.
+</p>
+</div>
+
+<div id="outline-container-orgcda0043" class="outline-4">
+<h4 id="orgcda0043">Examples</h4>
+<div class="outline-text-4" id="text-orgcda0043">
+<pre class="example" id="org31b9e55">&gt;&gt;&gt; maximal_increasing_subsequence([-1,1,7,5,-2,1,2,7,7,5,5,1,1,4,1])
+4
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79fea20" class="outline-3">
+<h3 id="org79fea20">Partition Even/Odd</h3>
+<div class="outline-text-3" id="text-org79fea20">
+<p>
+Write a function <code>partition_even_odd(A)</code> that takes an array of
+integers \(A\) and sorts the elements of \(A\) so that all the even
+elements precede all the odd elements.  The function must sort \(A\)
+<i>in-place.</i> This means that it must operate directly on \(A\) just by
+swapping elements, without using an additional array.
+</p>
+</div>
+
+<div id="outline-container-org0455921" class="outline-4">
+<h4 id="org0455921">Examples</h4>
+<div class="outline-text-4" id="text-org0455921">
+<pre class="example" id="org1186afc">&gt;&gt;&gt; A = [-1,1,7,5,-2,1,2,7,7,5,5,1,1,4,1]
+&gt;&gt;&gt; partition_even_odd(A)
+&gt;&gt;&gt; print(A)
+[-2,2,4,-1,1,7,5,1,7,7,5,5,1,1,1]
+</pre>
+
+<p>
+Notice that in general the solution is not unique.  For example, the
+following result would be equally correct:
+</p>
+
+<pre class="example" id="orgd143f9d">&gt;&gt;&gt; A = [-1,1,7,5,-2,1,2,7,7,5,5,1,1,4,1]
+&gt;&gt;&gt; partition_even_odd(A)
+&gt;&gt;&gt; print(A)
+[2,4,-2,5,1,5,1,7,7,7,-1,1,1,5,1]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6b31ee4" class="outline-3">
+<h3 id="org6b31ee4">Like or dislike</h3>
+<div class="outline-text-3" id="text-org6b31ee4">
+<p>
+Write a function <code>like_or_dislike(A)</code> that takes a sequence of ratings
+expressed with the strings <code>'like'</code> and <code>'dislike'</code>.  The function
+must print <code>'like'</code> if the most prevalent rating is <code>'like'</code>, or
+<code>'dislike'</code> if the most prevalent rating is <code>'dislike'</code>, or
+<code>'undecided'</code> otherwise.
+</p>
+</div>
+
+<div id="outline-container-orga58d8bc" class="outline-4">
+<h4 id="orga58d8bc">Examples</h4>
+<div class="outline-text-4" id="text-orga58d8bc">
+<pre class="example" id="orga7aae0e">&gt;&gt;&gt; like_or_dislike(['like'])
+like
+&gt;&gt;&gt; like_or_dislike(['dislike','like','dislike'])
+dislike
+&gt;&gt;&gt; like_or_dislike(['like','dislike'])
+undecided
+&gt;&gt;&gt; like_or_dislike([])
+undecided
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org18dc18e" class="outline-3">
+<h3 id="org18dc18e">Stops and Inversions</h3>
+<div class="outline-text-3" id="text-org18dc18e">
+<p>
+A car moves along a road.  For simplicity you may assume that the road
+is perfectly linear and that the position of the car is given as the
+distance from a certain reference point on the road.  Write a function
+<code>stops_and_inversions(P)</code> that, given an array \(P\) of time-ordered
+positions of the car, prints the number of times the car stopped and
+the the number of times that the car inverted the direction of motion.
+\(P=p_1,p_2,p_3,\ldots\) is time ordered in the sense that the car is at
+position \(p_1\) <i>before</i> it is at position \(p_2\), it is at \(p_2\) before
+it is at \(p_3\), and so on.
+</p>
+</div>
+
+<div id="outline-container-orgddeefac" class="outline-4">
+<h4 id="orgddeefac">Examples</h4>
+<div class="outline-text-4" id="text-orgddeefac">
+<pre class="example" id="org494c940">&gt;&gt;&gt; stops_and_inversions([])
+stops: 0
+inversions: 0
+&gt;&gt;&gt; stops_and_inversions([5,5,5])
+stops: 0
+inversions: 0
+&gt;&gt;&gt; stops_and_inversions([5,5,5,6,7,8])
+stops: 0
+inversions: 0
+&gt;&gt;&gt; stops_and_inversions([5,5,5,6,7,8,8])
+stops: 1
+inversions: 0
+&gt;&gt;&gt; stops_and_inversions([1,5,10,12,12,12,15,20,24])
+stops: 1
+inversions: 0
+&gt;&gt;&gt; stops_and_inversions([1,5,10,12,12,11,8,7])
+stops: 1
+inversions: 1
+&gt;&gt;&gt; stops_and_inversions([1,5,10,12,12,11,8,7,9,11,20,30])
+stops: 1
+inversions: 2
+&gt;&gt;&gt; stops_and_inversions([1,5,10,12,12,11,8,7,9,11,20,30,30,30,30,35,35])
+stops: 3
+inversions: 2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfe7828" class="outline-3">
+<h3 id="orgdfe7828">Minimal Bounding Rectangle</h3>
+<div class="outline-text-3" id="text-orgdfe7828">
+<p>
+Consider a sequence of \(n\) points \(p_1,p_2,\ldots,p_n\) in a plane
+identified by their Cartesian coordinates.  The coordinates are given
+in the form of two arrays \(X\) and \(Y\) both containing of \(n\) numbers,
+such that point \(p_i\) has coordinates <code>X[i]</code> and <code>Y[i]</code>.
+</p>
+
+<p>
+Write a function called <code>minimal_bounding_rectangle_area(X,Y)</code> that,
+given two arrays of coordinates \(X\) and \(Y\) representing \(n\) points,
+returns the area of the smallest axis-aligned rectangle that covers
+all the \(n\) points.  An axis-aligned rectangle is such that its sides
+are parallel to the \(X\) or \(Y\) axis.
+</p>
+</div>
+
+<div id="outline-container-org54e0e7c" class="outline-4">
+<h4 id="org54e0e7c">Examples</h4>
+<div class="outline-text-4" id="text-org54e0e7c">
+<pre class="example" id="orgec95fa8">&gt;&gt;&gt; minimal_bounding_rectangle_area([3,2,10,4],[5,5,3,2])
+24
+&gt;&gt;&gt; minimal_bounding_rectangle_area([2],[89])
+0
+minimal_bounding_rectangle_area([-8,8,9,-9,4,-4,4,-9,7],[10,1,-1,-5,7,-7,-2,0,3])
+306
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2a5f440" class="outline-3">
+<h3 id="org2a5f440">Distance Between Points</h3>
+<div class="outline-text-3" id="text-org2a5f440">
+<p>
+Write a function called <code>distance_between_points(X,Y,d)</code> that, given
+two arrays of coordinates \(X\) and \(Y\) representing \(n\) points, and a
+number \(d\), return <code>True</code> if and only if two of the given points are
+at a distance \(d\) from each other, or <code>False</code> otherwise.
+</p>
+</div>
+
+<div id="outline-container-org844b3d7" class="outline-4">
+<h4 id="org844b3d7">Examples</h4>
+<div class="outline-text-4" id="text-org844b3d7">
+<pre class="example" id="org967bb62">&gt;&gt;&gt; distance_between_points([3,2,1,10,5,4],[5,5,4,3,1,2],5)
+True
+&gt;&gt;&gt; distance_between_points([3,2,1,10,5,4],[5,5,4,3,1,2],1)
+True
+&gt;&gt;&gt; distance_between_points([3,2,1,10,5,4],[5,5,4,3,1,2],6)
+False
+&gt;&gt;&gt; distance_between_points([3,2,1,10,5,4],[5,5,4,3,1,2],4)
+False
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ffa99a" class="outline-3">
+<h3 id="org6ffa99a">Find a Square</h3>
+<div class="outline-text-3" id="text-org6ffa99a">
+<p>
+Write a function called <code>find_a_square(X,Y)</code> that, given two arrays of
+coordinates \(X\) and \(Y\) representing \(n\) points, and a number \(d\),
+return <code>True</code> if and only if four of those points are the vertices of
+a square, or <code>False</code> otherwise.
+</p>
+</div>
+
+<div id="outline-container-orga6c8617" class="outline-4">
+<h4 id="orga6c8617">Examples</h4>
+<div class="outline-text-4" id="text-orga6c8617">
+<pre class="example" id="orgf0e11c7">&gt;&gt;&gt; find_a_square([0,1,2,3],[3,1,4,2])
+True
+&gt;&gt;&gt; find_a_square([0,1,2,1],[3,1,3,5])
+False
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a33a64" class="outline-3">
+<h3 id="org7a33a64">Most Common Digit</h3>
+<div class="outline-text-3" id="text-org7a33a64">
+<p>
+Write a function called <code>most_common_digit(n)</code> that takes an integer
+\(n\), and returns the most common digit in the decimal representation
+of \(n\).  If there are two or more most common digits, the function
+must return the smallest one.
+</p>
+</div>
+
+<div id="outline-container-orgd7a8b82" class="outline-4">
+<h4 id="orgd7a8b82">Examples</h4>
+<div class="outline-text-4" id="text-orgd7a8b82">
+<pre class="example" id="orgbe52be1">&gt;&gt;&gt; most_common_digit(1969)
+9
+&gt;&gt;&gt; most_common_digit(44272)
+2
+&gt;&gt;&gt; most_common_digit(36223771538825331723)
+3
+&gt;&gt;&gt; most_common_digit(0)
+0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbbacdbd" class="outline-3">
+<h3 id="orgbbacdbd">Sums of Squares</h3>
+<div class="outline-text-3" id="text-orgbbacdbd">
+<p>
+Write a function called <code>sums_of_squares(n)</code> that prints all the pairs
+of squares that sum to \(n\).  That is, <code>sums_of_squares(n)</code> prints a
+line \(a^2\) <code>+</code> \(b^2\) for all the distinct pairs \(a\le b\) such that
+\(a^2+b^2=n\).
+</p>
+</div>
+
+<div id="outline-container-org553f911" class="outline-4">
+<h4 id="org553f911">Examples</h4>
+<div class="outline-text-4" id="text-org553f911">
+<pre class="example" id="org563658e">&gt;&gt;&gt; sums_of_squares(25)
+9 + 16
+&gt;&gt;&gt; sums_of_squares(21)
+&gt;&gt;&gt; sums_of_squares(125)
+4 + 121
+25 + 100
+&gt;&gt;&gt; sums_of_squares(178)
+9 + 169
+&gt;&gt;&gt; sums_of_squares(179)
+&gt;&gt;&gt; sums_of_squares(17993241)
+176400 + 17816841
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
