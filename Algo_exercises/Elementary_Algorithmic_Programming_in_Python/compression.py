@@ -15,4 +15,3 @@ def compress_sequence(A):
     
 # ex 1
 compress_sequence([-1,1,1,1,7,7,7,7,5,5,1,1,4,1])
-        
