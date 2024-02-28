@@ -1,8 +1,6 @@
 def multiples_of_three(A):
     counter = 0
     for number in A:
-        if number == 0:
-            break
         if number % 3 == 0:
             counter += 1
     return counter
