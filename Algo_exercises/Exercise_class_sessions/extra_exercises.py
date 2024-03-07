@@ -1,4 +1,5 @@
 def fibonacci(n):
+    assert n > 0
     sequence = []
     a, b = 0, 1
     sequence.append(a)
@@ -10,6 +11,16 @@ def fibonacci(n):
         b += 1
     return sequence
 
+def fibonacci_2(n):
+    sequence = []
+    while len(sequence) < n:
+        if len(sequence) == 0:
+            sequence.append(0)
+        elif len(sequence) == 1:
+            sequence.append(1)
+        else:
+            sequence.append(sequence[len(sequence)-1] + sequence[len(sequence)-2])
+    return sequence
 
 def factorial(n):
     fact = 1
