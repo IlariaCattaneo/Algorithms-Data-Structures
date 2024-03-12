@@ -14,13 +14,16 @@ def algo_x(A):
 # The best case is when the array contains n equal values so we don't enter in the second loop at all, so O(n)
 
 def better_algo_x(A):
-    B = []
-    for i in range(len(A)):
-        if A[i] not in B:
-            B.append(A[i])
-        else:
-            B.remove(A[i])
-    return len(B)
+    B = sorted(A)
+    x = 0
+    for i in range(len(B)):
+        if len(B) > 1:
+            if i == 0 and B[i] != B[i+1]:
+                x += 1
+            elif i == len(A)-1 and B[i] != B[i-1]:
+                x += 1
+            elif B[i] != B[i+1] and B[i] != B[i-1]:
+                x += 1
+    return x
 
-# better_algo_x has a worst case complexity of theta(n^2) since it scans every time the array once
-# not so better algo x
+# better_algo_x has a worst case complexity of theta(n) since it scans every time the array once
