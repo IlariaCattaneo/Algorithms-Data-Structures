@@ -33,7 +33,6 @@ class TestExercises(unittest.TestCase):
         array_remove_pos(A,1)
         self.assertEqual(A,[4,3])
         
-class TestExercises(unittest.TestCase):
     def test_array_remove_value(self):
         A = [7, 5, 2, 3, 5, 7, 3, 4, 2, 1]
         array_remove_value(A, 7)
@@ -49,7 +48,6 @@ class TestExercises(unittest.TestCase):
         self.assertEqual(len(A),len([4, 1]))
         self.assertFalse(2 in A)
 
-class TestExercises(unittest.TestCase):
     def test_array_remove_value_stable(self):
         A = [7, 5, 2, 3, 5, 7, 3, 4, 2, 1]
         array_remove_value_stable(A, 7)

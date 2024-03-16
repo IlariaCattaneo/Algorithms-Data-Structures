@@ -5,38 +5,24 @@ def find_peak(A):
             x = number
     return x
 
-# ex 1
-print(find_peak([1,2,3]))
-
-# ex 2
-print(find_peak([1,2,7,8,9]))
-
-# ex 3
-print(find_peak([9,6,5]))
-
-# ex 4
-print(find_peak([1,2,1,-3]))
-
-# ex 5
-print(find_peak([1,2,1,0,-3]))
-
-# ex 6
-print(find_peak([1,2,3,2,1]))
-
-# ex 7
-print(find_peak([1,2,3,4]))
-
-# ex 8
-print(find_peak([1,2]))
-
-# ex 9
-print(find_peak([4,7,4]))
-
-# ex 10
-print(find_peak([7]))
-
-# ex 11
-print(find_peak([7,4]))
-
-# ex 12
-print(find_peak([4,7]))
+def find_peak_binarysearch(A):
+    begin = 0
+    end = len(A)
+    if len(A) == 0:
+        return None
+    elif len(A) == 1:
+        return A[0]
+    while begin < end:
+        mid = (begin + end)//2
+        if abs(begin-(end-1)) == 1 or abs(begin-(end-1)) == 0:
+            if A[begin] > A[end-1]:
+                return A[begin]
+            else:
+                return A[end-1]
+        elif (A[mid - 1] <= A[mid] and A[mid] >= A[mid + 1]):
+            return A[mid]
+        elif A[mid] >= A[mid - 1]:
+            begin = mid + 1
+        elif A[mid] <= A[mid - 1]:
+            end = mid
+    return A[begin]
