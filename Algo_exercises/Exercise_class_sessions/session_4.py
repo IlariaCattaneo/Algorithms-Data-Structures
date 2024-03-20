@@ -67,25 +67,14 @@ def palindrome(s):
 
 #longest palindrom substring
 def lps(s):
-    begin = 0
-    end = len(s) - 1
-    sub = ''
-    if len(s) == 0:
-        return False
-    elif len(s) == 1:
+    if palindrome(s):
         return s
-    elif len(s) == 2:
-        if s[0] == s[1]:
-            return s
-        else:
-            return False
-    while begin < end:
-        if s[begin] != s[end]:
-            end -= 1
-        else:
-            if palindrome(s[begin:end+1]):
-                return s[begin:end+1]
-    return False
+    right = lps(s[:-1])
+    left = lps(s[1:])
+    if len(left) <= len(right):
+        return right
+    else:
+        return left
 
 # maximal difference
 def md(A):

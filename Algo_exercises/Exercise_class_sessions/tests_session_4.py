@@ -72,9 +72,9 @@ class TestExercises(unittest.TestCase):
         
     def test_lps(self):
         self.assertEqual(lps('babad'),'bab' or 'aba')
-        # self.assertEqual(lps('cbbd'),'bb')
+        self.assertEqual(lps('cbbd'),'bb')
         self.assertEqual(lps('a'),'a')
-        # self.assertEqual(lps('ac'),'a')
+        self.assertEqual(lps('ac'),'a')
         self.assertEqual(lps('bb'),'bb')
         self.assertEqual(lps('ccc'),'ccc')
         self.assertEqual(lps('aaaa'),'aaaa')
