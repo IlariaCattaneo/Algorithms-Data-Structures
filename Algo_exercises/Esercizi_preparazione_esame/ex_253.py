@@ -39,7 +39,7 @@ def sum(A):
     return sum
 
 import random
-def better_algo_x(A,k):
+def better_algo_x(A, k):
     if k >= len(A):
         return sum(A)
     v = random.choice(A)
@@ -53,9 +53,9 @@ def better_algo_x(A,k):
         else:
             M.append(A[i])
     if k < len(L):
-        return better_algo_x(L,k)
+        return better_algo_x(L, k)
     if k - len(L) <= len(M):
-        return sum(L) + (k-len(L))*v
-    return sum(L) + sum(M) + better_algo_x(R,k-len(L)-len(M))
+        return sum(L) + (k-len(L)) * v
+    return sum(L) + sum(M) + better_algo_x(R, k - len(L) - len(M))
 # this algo uses the k-selection which is a divide and conquer algorithm
 # it works in theta(n^2) in worst case but in theta(n) in both average and best case
