@@ -24,3 +24,5 @@ def better_algo_x(A,x):
         elif num > max:
             max = num
     return max - min > x
+# better algo x checks if there are any pair of numbers whose difference is greater than x
+# worst case complexity is theta(n) because we scan everything once to find the max and min values and then we check the difference between the two

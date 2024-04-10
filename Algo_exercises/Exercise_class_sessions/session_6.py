@@ -74,7 +74,6 @@ def better_algo_x_253(A,k):
         return sum_253(A)
     v = random.choice(A)
     L, M, R = [], [], []
-    i = 0
     for i in range(len(A)):
         if A[i] < v:
             L.append(A[i])
@@ -84,7 +83,7 @@ def better_algo_x_253(A,k):
             M.append(A[i])
     if k < len(L):
         return better_algo_x_253(L,k)
-    if k - len(L) <= len(M):
+    if k < len(L) + len(M):
         return sum_253(L) + (k-len(L))*v
     return sum_253(L) + sum_253(M) + better_algo_x_253(R,k-len(L)-len(M))
 # this algo uses the k-selection which is a divide and conquer algorithm
