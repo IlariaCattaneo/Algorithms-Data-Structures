@@ -24,6 +24,7 @@ def enqueue(x):
 
 def dequeue():
     global Q, head, tail
+    assert not is_empty(), "Queue underflow"
     head += 1
     return Q[head-1]
     
