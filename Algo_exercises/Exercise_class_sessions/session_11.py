@@ -36,18 +36,21 @@ def DP(A,i,B,j,memo):
 # MAXIMAL NON-ADJACENT SUM
 def max_adjacent_sum(A):
     n = len(A)
-    if n == 0:
+    DP = [0] * (n+2)
+    for i in range(n+2,-1,-2):
+        DP[i] = max(A[i] + DP[i+2], DP[i+1])
+    return DP[0]
+
+def dp_memoization(M,A,i):
+    if i >= len(A):
         return 0
-    if n == 1:
-        return A[0]
-    dp = [0] * n
+    if i in M:
+        return M[i]
+    m = max(A[i] + dp_memoization(M,A,i+2), dp_memoization(M,A,i+1))
+    M[i] = m
+    return m
 
-    # Initialize the base cases
-    dp[0] = max(0, A[0])  # If only one element, either take it or leave it (0 if negative)
-    dp[1] = max(dp[0], A[1])  # Either take the first element or the second one
-
-    # Fill the dp array
-    for i in range(2, n):
-        dp[i] = max(dp[i - 1], A[i] + dp[i - 2])
-
-    return dp[-1]
+def dp_recursive(A,i):
+    if i >= len(A):
+        return 0
+    return max(A[i] + dp_recursive(A,i+2), dp_recursive(A,i+1))
